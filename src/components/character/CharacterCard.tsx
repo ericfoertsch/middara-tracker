@@ -8,24 +8,25 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import type { Character } from "@/types/character";
 
 interface CharacterCardProps {
-    value: number
+    character: Character
 }
 
-export function CharacterCard({ value }: CharacterCardProps) {
+export function CharacterCard({ character }: CharacterCardProps) {
     return (
         <Card className="w-[350px]">
             <CardHeader>
-                <CardTitle>Test</CardTitle>
+                <CardTitle>{ character.name }</CardTitle>
                 <CardDescription>This is a character.</CardDescription>
             </CardHeader>
             <CardContent>
-                <Label>{ value }</Label>
+                <Label>{ character.id }</Label>
             </CardContent>
             <CardFooter className="flex justify-between">
-                <Button variant="outline">Edit</Button>
-                <Button>View</Button>
+                <Button variant="outline">Button 1</Button>
+                <Button>Button 2</Button>
             </CardFooter>
         </Card>
     );

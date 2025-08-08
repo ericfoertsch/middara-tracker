@@ -1,11 +1,14 @@
-import { CharacterCard } from "@/components/character/CharacterCard"
+import { useRoutes } from 'react-router-dom';
+import { routes } from './routes/routes';
 
 function App() {
+  const element = useRoutes(routes);
+
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <CharacterCard value={1}></CharacterCard>
+    <div>
+      {element}
     </div>
-  )
+  );
 }
 
 export default App
