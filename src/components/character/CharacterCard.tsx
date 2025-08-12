@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -33,10 +31,6 @@ export function CharacterCard({ character }: CharacterCardProps) {
                     statMap={skillStatMap}
                 />
             </CardContent>
-            <CardFooter className="flex justify-between">
-                <Button variant="outline">Button 1</Button>
-                <Button>Button 2</Button>
-            </CardFooter>
         </Card>
     );
 }
