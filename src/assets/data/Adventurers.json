@@ -1,0 +1,27 @@
+[
+    {"id": 1, "name": "Aisling Dryks", "locked": true },
+    {"id": 2, "name": "Black Wolf", "locked": true },
+    {"id": 3, "name": "Circe Priestess of the Dark Divine", "locked": true },
+    {"id": 4, "name": "Count Delv", "locked": true },
+    {"id": 5, "name": "Coven Mother", "locked": true },
+    {"id": 6, "name": "Damocles Hyde", "locked": false },
+    {"id": 7, "name": "Echo Rehn", "locked": true },
+    {"id": 8, "name": "Faunus God of Nymphs", "locked": true },
+    {"id": 9, "name": "Girtiya", "locked": true },
+    {"id": 10, "name": "Justice Bouchard", "locked": false },
+    {"id": 11, "name": "Luperci Brother of the Wolf", "locked": true },
+    {"id": 12, "name": "Nightingale Arsen", "locked": false },
+    {"id": 13, "name": "Nyx", "locked": true },
+    {"id": 14, "name": "Padric Brown", "locked": false },
+    {"id": 15, "name": "Psyche Aphorism of Love", "locked": true },
+    {"id": 16, "name": "Remi Moretti", "locked": false },
+    {"id": 17, "name": "Rook Lars", "locked": false },
+    {"id": 18, "name": "Shayliss Arsen", "locked": true },
+    {"id": 19, "name": "The Judge's Daughter", "locked": true },
+    {"id": 20, "name": "Tixie Ascended Vestal of Lupercalia", "locked": true },
+    {"id": 21, "name": "Toxie Neonate Lupa", "locked": true },
+    {"id": 22, "name": "Tomoe", "locked": true },
+    {"id": 23, "name": "Zeke Jeong", "locked": false },
+    {"id": 24, "name": "Zafir Al'Kashif", "locked": true }
+]
+

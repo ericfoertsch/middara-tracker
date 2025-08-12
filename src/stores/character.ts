@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { Character } from '@/types/character';
+import adventurers from "@/assets/data/AdventurersTest.json";
 
 export const useCharacterStore = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -12,7 +13,7 @@ export const useCharacterStore = () => {
             setError(null);
 
             try {
-                const data: Character[] = [ { id: 1, name: "Test1" }, { id: 2, name: "Test2" } ];
+                const data: Character[] = adventurers;
                 setCharacters(data);
             } catch (err) {
                 setError('Failed to fetch all convention series data: ' + err);
