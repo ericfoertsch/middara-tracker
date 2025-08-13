@@ -4,6 +4,9 @@ export interface Character {
     locked: boolean
     baseStats: CharacterBaseStats
     skillStats: CharacterSkillStats
+    image: string
+    primaryColor: string
+    secondaryColor: string
 }
 
 export interface CharacterBaseStats {
