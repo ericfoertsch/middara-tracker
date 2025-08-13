@@ -20,7 +20,7 @@ export function CharacterCard({ character }: CharacterCardProps) {
 
     return (
         <Card 
-            className="w-100 overflow-visible shadow-lg border-0 rounded-xl"
+            className="w-80 overflow-visible shadow-lg border-0 rounded-xl"
             style={{ 
                 background: `linear-gradient(135deg, ${primary}, ${secondary})`,
             }}
