@@ -1,29 +1,44 @@
-import { useState, useEffect } from 'react';
-import type { Character } from '@/types/character';
-import adventurers from "@/assets/data/AdventurersTest.json";
+import { create } from "zustand";
+import type { Character } from "@/types/character";
+import adventurers from "@/assets/data/Adventurers.json";
 
-export const useCharacterStore = () => {
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
-    const [characters, setCharacters] = useState<Character[]>([]);
+type CharacterState = {
+    characters: Character[]
+    loading: boolean
+    error: string | null
+    filter: string
 
-    useEffect(() => {
-        const loadCharacters = async () => {
-            setLoading(true);
-            setError(null);
-
-            try {
-                const data: Character[] = adventurers;
-                setCharacters(data);
-            } catch (err) {
-                setError('Failed to fetch all convention series data: ' + err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        loadCharacters();
-    }, []);
-
-    return { characters, loading, error };
+    setFilter: (filter: string) => void
+    loadCharacters: () => Promise<void>
+    filteredCharacters: () => Character[]
 }
+
+export const useCharacterStore = create<CharacterState>((set, get) => ({
+    characters: [],
+    loading: false,
+    error: null,
+    filter: "",
+
+    setFilter: (filter) => set({ filter }),
+
+
+  loadCharacters: async () => {
+    set({ loading: true, error: null })
+    try {
+      // Simulated async load (can be replaced with fetch)
+      const data: Character[] = adventurers
+      set({ characters: data })
+    } catch (err) {
+      set({ error: `Failed to fetch characters: ${err}` })
+    } finally {
+      set({ loading: false })
+    }
+  },
+
+  filteredCharacters: () => {
+    const { filter, characters } = get()
+    return characters.filter((c) =>
+      c.name.toLowerCase().includes(filter.toLowerCase())
+    )
+  },
+}))
