@@ -1,14 +1,17 @@
 import { useRoutes } from "react-router-dom";
 import { routes } from "./routes/routes";
 import { MainLayout } from "@/components/layout/MainLayout";
+import ThemeProvider from "./components/layout/ThemeProvider";
 
 function App() {
   const element = useRoutes(routes);
 
   return (
-    <MainLayout breadcrumb="Builder > Example">
-      {element}
-    </MainLayout>
+    <ThemeProvider>
+      <MainLayout breadcrumb="Builder > Example">
+        {element}
+      </MainLayout>
+    </ThemeProvider>
   );
 }
 
