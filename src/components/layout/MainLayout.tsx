@@ -11,7 +11,7 @@ interface MainLayoutProps {
 export function MainLayout({ children }: MainLayoutProps) {
     return (
         <div className="h-screen flex flex-col">
-            <header className="flex items-center bg-muted border-b px-4 h-14">
+            <header className="flex items-center bg-header text-header-foreground border-b px-4 h-14">
                 <div className="flex items-center space-x-4">
                     <div className="w-8 h-8 bg-primary rounded" />
                     <Separator orientation="vertical" className="h-6" />

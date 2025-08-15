@@ -9,7 +9,7 @@ interface ThemeState {
 }
 
 export const useRootStore = create<ThemeState>((set) => ({
-  theme: (localStorage.getItem("theme") as Theme) || "light",
+  theme: (localStorage.getItem("theme") as Theme) || "dark",
   toggleTheme: () =>
     set((state) => {
       const newTheme = state.theme === "light" ? "dark" : "light";
