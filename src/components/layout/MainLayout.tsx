@@ -11,7 +11,7 @@ interface MainLayoutProps {
 export function MainLayout({ children }: MainLayoutProps) {
     return (
         <div className="h-screen flex flex-col">
-            <header className="flex items-center bg-muted border-b px-4 h-14">
+            <header className="flex items-center bg-header text-header-foreground border-b px-4 h-14">
                 <div className="flex items-center space-x-4">
                     <div className="w-8 h-8 bg-primary rounded" />
                     <Separator orientation="vertical" className="h-6" />
@@ -24,6 +24,7 @@ export function MainLayout({ children }: MainLayoutProps) {
                     <nav className="flex flex-col space-y-1">
                         <SidebarLink href="/dashboard/dashboard2">Dashboard</SidebarLink>
                         <SidebarLink href="/builder">Builder</SidebarLink>
+                        <SidebarLink href="/settings">Settings</SidebarLink>
                     </nav>
                 </aside>
                 <main className="flex-1 p-6 overflow-auto">

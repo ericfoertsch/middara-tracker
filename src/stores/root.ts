@@ -1,18 +1,27 @@
-import { useState, useEffect } from 'react';
+import { create } from "zustand";
 
-export const useRootStore = () => {
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
+type Theme = "light" | "dark";
 
-    useEffect(() => {
-        const loadRoot = async () => {
-            setLoading(true);
-            setError(null);
-            setLoading(false);
-        };
-
-        loadRoot();
-    }, []);
-
-    return { loading, error };
+interface ThemeState {
+  theme: Theme;
+  toggleTheme: () => void;
+  setTheme: (theme: Theme) => void;
 }
+
+export const useRootStore = create<ThemeState>((set) => ({
+  theme: (localStorage.getItem("theme") as Theme) || "dark",
+  toggleTheme: () =>
+    set((state) => {
+      const newTheme = state.theme === "light" ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      document.documentElement.classList.remove("light", "dark");
+      document.documentElement.classList.add(newTheme);
+      return { theme: newTheme };
+    }),
+  setTheme: (theme) => {
+    localStorage.setItem("theme", theme);
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    set({ theme });
+  },
+}));

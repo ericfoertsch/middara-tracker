@@ -18,7 +18,7 @@ export function BreadcrumbNav() {
                                 <BreadcrumbSeparator />
                             </>
                         ) : (
-                            <span className="text-muted-foreground">{segment.label}</span>
+                            <span className="text-header-foreground">{segment.label}</span>
                         )}
                     </BreadcrumbItem>
                 ))}
