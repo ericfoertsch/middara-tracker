@@ -8,6 +8,7 @@ import type { Character } from "@/types/character";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Lock } from "lucide-react";
 import { CharacterTooltip } from "./CharacterTooltip";
+import { CategoryBadge } from "../elements/CategoryBadge";
 
 interface CharacterCardProps {
     character: Character
@@ -32,6 +33,7 @@ export function CharacterCard({ character }: CharacterCardProps) {
                     { character.locked && <Lock className="w-5 h-5 text-white/70 flex-shrink-0"></Lock>}
                 </CardHeader>
                 <CardContent className="bg-white p-4 rounded-b-xl">
+                    <CategoryBadge category="Adventurer" subcategory={character.name} categoryColor="#12FF45" />
                 </CardContent>
             </Card>
         </ TooltipProvider>
