@@ -1,14 +1,17 @@
 import {
   Card,
   CardContent,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import type { Character } from "@/types/character";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Lock } from "lucide-react";
+import { Eye, Lock } from "lucide-react";
 import { CharacterTooltip } from "./CharacterTooltip";
 import { CategoryBadge } from "../elements/CategoryBadge";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface CharacterCardProps {
     character: Character
@@ -17,6 +20,7 @@ interface CharacterCardProps {
 export function CharacterCard({ character }: CharacterCardProps) {
     const primary = character.primaryColor || "#4B5563";
     const secondary = character.secondaryColor || "#9CA3AF";
+    const urlName = character.name.trim().replace(/\s+/g, "-");
 
     return (
         <TooltipProvider>
@@ -35,6 +39,13 @@ export function CharacterCard({ character }: CharacterCardProps) {
                 <CardContent className="bg-white p-4 rounded-b-xl">
                     <CategoryBadge category="Adventurer" subcategory={character.name} categoryColor="#12FF45" />
                 </CardContent>
+                <CardFooter>
+                    <Button asChild size="sm" variant="ghost" className="p-1">
+                        <Link to={`/characters/${urlName}`} title={`View ${character.name}`}>
+                            <Eye className="w-4 h-4 text-white" />
+                        </Link>
+                    </Button>
+                </CardFooter>
             </Card>
         </ TooltipProvider>
     );
