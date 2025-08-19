@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useCharacterStore } from "@/stores/character";
 import { useEffect, useState } from "react";
 import type { Character } from "@/types/character";
+import { CharacterBaseStatRow } from "@/components/character/CharacterBaseStatRow";
+import { CharacterSkillStatRow } from "@/components/character/CharacterSkillStatRow";
 
 export default function CharacterDetailsPage() {
     const {
@@ -35,9 +37,10 @@ export default function CharacterDetailsPage() {
         }}>
       <h1 className="text-2xl font-bold border-4">{character?.name}</h1>
       {character && 
-        <div className="border-4">{
-            <span>LOL</span>
-        }</div>}
+        <div className="border-4">
+            <CharacterBaseStatRow stats={character.baseStats} />
+            <CharacterSkillStatRow stats={character.skillStats} />
+        </div>}
     </div>
   );
 }

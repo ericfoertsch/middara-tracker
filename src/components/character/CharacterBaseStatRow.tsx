@@ -1,13 +1,13 @@
-import type { StatDefinition } from "@/types/stats";
 import { CharacterStat } from "./CharacterStat";
 import type { CharacterBaseStats } from "@/types/character";
+import { baseStatMap } from "@/assets/data/stats";
 
 interface CharacterBaseStatRowProps {
     stats: CharacterBaseStats;
-    statMap: Record<string, StatDefinition>;
 }
 
-export function CharacterBaseStatRow({ stats, statMap }: CharacterBaseStatRowProps) {
+export function CharacterBaseStatRow({ stats }: CharacterBaseStatRowProps) {
+    const statMap = baseStatMap
     return (
         <div className="flex justify-around mb-2">
             <CharacterStat key="health" stat={statMap["health"]} value={stats.health} />
