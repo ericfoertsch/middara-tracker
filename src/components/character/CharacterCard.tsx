@@ -37,10 +37,10 @@ export function CharacterCard({ character }: CharacterCardProps) {
                     { character.locked && <Lock className="w-5 h-5 text-white/70 flex-shrink-0"></Lock>}
                 </CardHeader>
                 <CardContent className="bg-white p-4 rounded-b-xl">
-                    <CategoryBadge category="Adventurer" subcategory={character.name} categoryColor="#12FF45" />
+                    <CategoryBadge category="Adventurer" subcategory={character.adventurer} categoryColor="#12FF45" />
                 </CardContent>
                 <CardFooter>
-                    <Button asChild size="sm" variant="ghost" className="p-1">
+                    <Button asChild size="sm" variant="ghost" className="p-1 bg-primary text-primary-foreground">
                         <Link to={`/characters/${urlName}`} title={`View ${character.name}`}>
                             <Eye className="w-4 h-4 text-white" />
                         </Link>
