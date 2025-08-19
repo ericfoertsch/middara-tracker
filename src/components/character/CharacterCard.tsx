@@ -30,19 +30,19 @@ export function CharacterCard({ character }: CharacterCardProps) {
                     background: `linear-gradient(135deg, ${primary}, ${secondary})`,
                 }}>
                     <CardTitle 
-                        className="text-lg text-white drop-shadow truncate max-w-[220px]"
+                        className="text-lg text-foreground drop-shadow truncate max-w-[220px]"
                     >
                         <CharacterTooltip text={character.name}>{ character.name }</ CharacterTooltip>
                     </CardTitle>
                     { character.locked && <Lock className="w-5 h-5 text-white/70 flex-shrink-0"></Lock>}
                 </CardHeader>
-                <CardContent className="bg-white p-4 rounded-b-xl">
+                <CardContent className="bg-foreground p-4 rounded-b-xl">
                     <CategoryBadge category="Adventurer" subcategory={character.adventurer} categoryColor="#12FF45" />
                 </CardContent>
                 <CardFooter>
                     <Button asChild size="sm" variant="ghost" className="p-1 bg-primary text-primary-foreground">
                         <Link to={`/characters/${urlName}`} title={`View ${character.name}`}>
-                            <Eye className="w-4 h-4 text-white" />
+                            <Eye className="w-4 h-4 text-foreground" />
                         </Link>
                     </Button>
                 </CardFooter>
