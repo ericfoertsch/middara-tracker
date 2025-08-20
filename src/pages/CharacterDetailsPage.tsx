@@ -14,15 +14,15 @@ export default function CharacterDetailsPage() {
       selectCharacter
   } = useCharacterStore();
 
-  const { name } = useParams<{ name: string }>();
+  const { cardId } = useParams<{ cardId: string }>();
   const [character, setCharacter] = useState<Character | null>(null);
 
   useEffect(() => {
-    if (name) {
-      const c = selectCharacter(name);
+    if (cardId) {
+      const c = selectCharacter(cardId);
       setCharacter(c);
     }
-  }, [name, selectCharacter]);
+  }, [cardId, selectCharacter]);
 
   if (!character && characters) {
     return <div>{error}</div>;
@@ -31,8 +31,6 @@ export default function CharacterDetailsPage() {
   if (!character) {
     return <div className="p-6">Character not found</div>
   }
-
-  console.log(character)
 
   return (
     <div className="container mx-auto p-6 space-y-6">

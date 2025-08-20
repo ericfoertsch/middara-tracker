@@ -6,5 +6,5 @@ import CharacterDetailsPage from '@/pages/CharacterDetailsPage';
 export const routes: RouteObject[] = [
   { path: "/characters", element: <TestPage /> },
   { path: "/settings", element: <SettingPage /> },
-  { path: "/characters/:name", element: <CharacterDetailsPage /> }
+  { path: "/characters/:cardId", element: <CharacterDetailsPage /> }
 ];

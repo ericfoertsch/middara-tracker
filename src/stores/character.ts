@@ -24,13 +24,13 @@ export const useCharacterStore = create<CharacterState>((set, get) => ({
 
   setFilter: (filter) => set({ filter }),
 
-  selectCharacter: (name: string | undefined): Character | null => {
+  selectCharacter: (cardId: string | undefined): Character | null => {
     set({ error: null })
 
-    const characterName = name?.replace(/-/g, " ") ?? "";
+    //const characterName = name?.replace(/-/g, " ") ?? "";
     const characters = get().characters;
 
-    const character = characters.find((c) => c.name === characterName);
+    const character = characters.find((c) => c.cardId === cardId);
 
     if (!character) {
       set({ error: "Character not found." });

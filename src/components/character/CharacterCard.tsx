@@ -20,7 +20,7 @@ interface CharacterCardProps {
 export function CharacterCard({ character }: CharacterCardProps) {
     const primary = character.primaryColor || "#4B5563";
     const secondary = character.secondaryColor || "#9CA3AF";
-    const urlName = character.name.trim().replace(/\s+/g, "-");
+    //const urlName = character.name.trim().replace(/\s+/g, "-");
 
     return (
         <TooltipProvider>
@@ -41,7 +41,7 @@ export function CharacterCard({ character }: CharacterCardProps) {
                 </CardContent>
                 <CardFooter>
                     <Button asChild size="sm" variant="ghost" className="p-1 bg-primary text-primary-foreground">
-                        <Link to={`/characters/${urlName}`} title={`View ${character.name}`}>
+                        <Link to={`/characters/${character.cardId}`} title={`View ${character.cardId}`}>
                             <Eye className="w-4 h-4 text-foreground" />
                         </Link>
                     </Button>
