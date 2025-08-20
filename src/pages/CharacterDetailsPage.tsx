@@ -32,12 +32,14 @@ export default function CharacterDetailsPage() {
     return <div className="p-6">Character not found</div>
   }
 
+  console.log(character)
+
   return (
     <div className="container mx-auto p-6 space-y-6">
       <Card className="overflow-hidden border-2" style={{ borderColor: character.primaryColor }}>
         <div className="flex gap-6 items-center p-6 bg-muted/30">
           <img
-            src={character.images.profileImage}
+            src={`/images/Adventurer/${character.adventurer}/${character.images.profileImage}`}
             alt={character.name}
             className="w-32 h-32 rounded-xl object-cover border"
             style={{ borderColor: character.secondaryColor }}

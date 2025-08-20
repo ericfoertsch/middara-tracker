@@ -189,7 +189,7 @@
     "images": { "image": "6-8-AB1-1.2.png", "profileImage": "6-8-AB1-1.2-Profile.png" }
   },
   {
-    "cardId": "8-8-1.2-AB1",
+    "cardId": "7-8-1.2-AB1",
     "id": 8,
     "total": 8,
     "name": "Rook Lars",
@@ -207,10 +207,10 @@
     "skillStats": { "presence": 4, "lore": 5, "agility": 1, "perception": 2, "strength": 6 },
     "primaryColor": "#f97316",
     "secondaryColor": "#3b82f6",
-    "images": { "image": "8-8-AB1-1.2.png", "profileImage": "8-8-AB1-1.2-Profile.png" }
+    "images": { "image": "7-8-AB1-1.2.png", "profileImage": "7-8-AB1-1.2-Profile.png" }
   },
   {
-    "cardId": "7-8-1.2-AB1",
+    "cardId": "8-8-1.2-AB1",
     "id": 7,
     "total": 8,
     "name": "Zeke Jeong",
@@ -228,7 +228,7 @@
     "skillStats": { "presence": 2, "lore": 2, "agility": 4, "perception": 6, "strength": 4 },
     "primaryColor": "#eab308",
     "secondaryColor": "#3b82f6",
-    "images": { "image": "7-8-AB1-1.2.png", "profileImage": "7-8-AB1-1.2-Profile.png" }
+    "images": { "image": "8-8-AB1-1.2.png", "profileImage": "8-8-AB1-1.2-Profile.png" }
   },
   {
     "cardId": "20-63-1.2-LP21",

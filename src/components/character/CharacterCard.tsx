@@ -32,7 +32,7 @@ export function CharacterCard({ character }: CharacterCardProps) {
                     <CardTitle 
                         className="text-lg text-foreground drop-shadow truncate max-w-[220px]"
                     >
-                        <CharacterTooltip text={character.name}>{ character.name }</ CharacterTooltip>
+                        <CharacterTooltip text={character.name}>{ character.name } { character.cardId }</ CharacterTooltip>
                     </CardTitle>
                     { character.locked && <Lock className="w-5 h-5 text-white/70 flex-shrink-0"></Lock>}
                 </CardHeader>
