@@ -26,7 +26,7 @@ export default function CharacterGrid() {
             <ScrollArea className="flex-1 pr-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
                     {filteredCharacters().map((char:Character) => (
-                        <CharacterCard key={char.id} character={char} />
+                        <CharacterCard key={char.cardId} character={char} />
                     ))}
                 </div>
             </ScrollArea>

@@ -23,7 +23,7 @@ export function MainLayout({ children }: MainLayoutProps) {
                 <aside className="w-48 bg-muted/40 border-r p-4 space-y-2">
                     <nav className="flex flex-col space-y-1">
                         <SidebarLink href="/dashboard/dashboard2">Dashboard</SidebarLink>
-                        <SidebarLink href="/builder">Builder</SidebarLink>
+                        <SidebarLink href="/characters">Characters</SidebarLink>
                         <SidebarLink href="/settings">Settings</SidebarLink>
                     </nav>
                 </aside>

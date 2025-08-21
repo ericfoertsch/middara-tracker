@@ -1,13 +1,13 @@
-import type { StatDefinition } from "@/types/stats";
 import { CharacterStat } from "./CharacterStat";
 import type { CharacterSkillStats } from "@/types/character";
+import { skillStatMap } from "@/assets/data/stats";
 
 interface CharacterSkillStatRowProps {
     stats: CharacterSkillStats;
-    statMap: Record<string, StatDefinition>;
 }
 
-export function CharacterSkillStatRow({ stats, statMap }: CharacterSkillStatRowProps) {
+export function CharacterSkillStatRow({ stats }: CharacterSkillStatRowProps) {
+    const statMap = skillStatMap
     return (
         <div className="flex justify-around mb-2">
             <CharacterStat key="presence" stat={statMap["presence"]} value={stats.presence} />
