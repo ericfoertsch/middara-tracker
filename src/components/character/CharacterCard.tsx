@@ -2,7 +2,6 @@ import {
   Card,
   CardContent,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import type { Character } from "@/types/character";
@@ -14,41 +13,66 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 interface CharacterCardProps {
-    character: Character
+  character: Character;
 }
 
 export function CharacterCard({ character }: CharacterCardProps) {
-    const primary = character.primaryColor || "#4B5563";
-    const secondary = character.secondaryColor || "#9CA3AF";
-    //const urlName = character.name.trim().replace(/\s+/g, "-");
+  const primary = character.primaryColor || "#4B5563";
+  const secondary = character.secondaryColor || "#9CA3AF";
 
-    return (
-        <TooltipProvider>
-            <Card className="w-80 overflow-visible shadow-none border-0 rounded-xl bg-transparent">
-                <CardHeader className="flex flex-row items-center justify-between p-4 bg-black/30 rounded-t-xl"
-                            style={{ 
-                    background: `linear-gradient(135deg, ${primary}, ${secondary})`,
-                }}>
-                    <CardTitle 
-                        className="text-lg text-foreground drop-shadow truncate max-w-[220px]"
-                    >
-                        <CharacterTooltip text={character.name}>{ character.name } { character.cardId }</ CharacterTooltip>
-                    </CardTitle>
-                    { character.locked && <Lock className="w-5 h-5 text-white/70 flex-shrink-0"></Lock>}
-                </CardHeader>
-                <CardContent className="bg-foreground p-4 rounded-b-xl">
-                    <CategoryBadge category="Adventurer" subcategory={character.adventurer} categoryColor="#12FF45" />
-                </CardContent>
-                <CardFooter>
-                    <Button asChild size="sm" variant="ghost" className="p-1 bg-primary text-primary-foreground">
-                        <Link to={`/characters/${character.cardId}`} title={`View ${character.cardId}`}>
-                            <Eye className="w-4 h-4 text-foreground" />
-                        </Link>
-                    </Button>
-                </CardFooter>
-            </Card>
-        </ TooltipProvider>
-    );
+  return (
+    <TooltipProvider>
+      <Card className="rounded-2xl overflow-hidden bg-card">
+        <div className="relative">
+          <img
+            src={`/images/Adventurer/${character.adventurer}/${character.images.profileImage}`}
+            alt={character.name}
+            className="w-full h-44 object-cover"
+          />
+          <div
+            className="absolute bottom-0 left-0 right-0 px-3 py-2 flex items-center justify-between"
+            style={{
+              backgroundColor: primary,
+              borderTop: `3px solid ${secondary}`,
+            }}
+          >
+            <CardTitle className="text-sm font-semibold text-white truncate max-w-[180px] drop-shadow">
+              <CharacterTooltip text={character.name}>
+                {character.name} {character.cardId}
+              </CharacterTooltip>
+            </CardTitle>
+            {character.locked && (
+              <Lock className="w-4 h-4 text-white/80 flex-shrink-0" />
+            )}
+          </div>
+        </div>
+        <CardContent className="p-3">
+          <div className="flex flex-wrap gap-2">
+            <CategoryBadge
+              category="Adventurer"
+              subcategory={character.adventurer}
+              categoryColor="#12FF45"
+            />
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-end px-3 pb-3 border-t">
+          <Button
+            asChild
+            size="icon"
+            variant="outline"
+            className="h-9 w-9 rounded-md"
+          >
+            <Link
+              to={`/characters/${character.cardId}`}
+              title={`View ${character.cardId}`}
+            >
+              <Eye className="h-5 w-5" />
+            </Link>
+          </Button>
+        </CardFooter>
+      </Card>
+    </TooltipProvider>
+  );
 }
 
-export default CharacterCard
+export default CharacterCard;
