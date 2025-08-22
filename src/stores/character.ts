@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import type { Character } from "@/types/character";
-import adventurers from "@/assets/data/AdventurersNew.json";
+import adventurers from "@/assets/data/Adventurers.json";
 
 type CharacterState = {
     characters: Character[]
