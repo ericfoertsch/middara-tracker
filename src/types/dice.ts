@@ -1,5 +1,6 @@
 export type DiceColor = "black" | "purple" | "white" | "orange" | "teal" | "red" | "green" | "grey" | "blue";
 export type DiceSymbol = "book" | "shield" | "burst" | "skull";
+export type DiceDisplayType = "conviction" | "casting";
 
 export const convictionRatings: ConvictionRating = {
   black: 0,

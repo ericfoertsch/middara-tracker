@@ -5,6 +5,7 @@ import type { Character } from "@/types/character"
 import { useCharacterStore } from "@/stores/character";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { DiceDisplay } from "@/components/dice/DiceDisplay";
 
 
 export default function CharacterDetailsPage() {
@@ -69,6 +70,8 @@ export default function CharacterDetailsPage() {
               <CardTitle>Base Stats</CardTitle>
             </CardHeader>
             <CardContent className="grid grid-cols-3 gap-4 text-center">
+              <DiceDisplay mode="conviction" dice={["purple", "purple"]} />
+              <DiceDisplay mode="casting" dice={["purple"]} />
               <StatBox label="Health" value={character.baseStats.health} />
               <StatBox label="Defense" value={character.baseStats.defense} />
               <StatBox label="Movement" value={character.baseStats.movement} />
