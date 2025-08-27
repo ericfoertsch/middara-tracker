@@ -53,19 +53,20 @@ export default function CharacterDetailsPage() {
       {/* Responsive Grid for all stats */}
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {/* Base Stats */}
-        <Card>
+                <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle>Base Stats</CardTitle>
           </CardHeader>
-          <CardContent className="grid grid-cols-3 gap-2 text-center">
+          <CardContent className="grid grid-cols-4 gap-2 text-center">
             <StatBox label="Health" value={character.baseStats.health} />
             <StatBox label="Defense" value={character.baseStats.defense} />
             <StatBox label="Movement" value={character.baseStats.movement} />
+            <StatBox label="SP" value={character.sp} />
           </CardContent>
         </Card>
-
+        
         {/* Dice Stats */}
-        <Card className="lg:col-span-2">
+        <Card>
           <CardHeader>
             <CardTitle>Dice</CardTitle>
           </CardHeader>
@@ -84,6 +85,7 @@ export default function CharacterDetailsPage() {
             </div>
           </CardContent>
         </Card>
+
 
         {/* Skill Stats */}
         <Card className="lg:col-span-3">
