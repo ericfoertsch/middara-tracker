@@ -1,20 +1,13 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import type { Character } from "@/types/character"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import type { Character } from "@/types/character";
 import { useCharacterStore } from "@/stores/character";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { DiceDisplay } from "@/components/dice/DiceDisplay";
 
-
 export default function CharacterDetailsPage() {
-  const {
-      error,
-      characters,
-      selectCharacter
-  } = useCharacterStore();
-
+  const { error, characters, selectCharacter } = useCharacterStore();
   const { cardId } = useParams<{ cardId: string }>();
   const [character, setCharacter] = useState<Character | null>(null);
 
@@ -28,13 +21,13 @@ export default function CharacterDetailsPage() {
   if (!character && characters) {
     return <div>{error}</div>;
   }
-
   if (!character) {
-    return <div className="p-6">Character not found</div>
+    return <div className="p-6">Character not found</div>;
   }
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
+    <div className="container mx-auto space-y-6">
+      {/* Character Header */}
       <Card className="overflow-hidden border-2" style={{ borderColor: character.primaryColor }}>
         <div className="flex gap-6 items-center p-6 bg-muted/30">
           <img
@@ -43,8 +36,8 @@ export default function CharacterDetailsPage() {
             className="w-32 h-32 rounded-xl object-cover border"
             style={{ borderColor: character.secondaryColor }}
           />
-          <div className="space-y-2">
-            <CardTitle className="text-2xl font-bold">{character.name}</CardTitle>
+          <div className="space-y-2 min-w-0">
+            <CardTitle className="text-2xl font-bold truncate">{character.name}</CardTitle>
             <p className="text-muted-foreground">{character.subtitle}</p>
             <div className="flex gap-2 flex-wrap">
               {character.tags.map((tag, i) => (
@@ -57,87 +50,85 @@ export default function CharacterDetailsPage() {
         </div>
       </Card>
 
-      <Tabs defaultValue="stats" className="w-full">
-        <TabsList>
-          <TabsTrigger value="stats">Stats</TabsTrigger>
-          <TabsTrigger value="skills">Skills</TabsTrigger>
-          <TabsTrigger value="info">Info</TabsTrigger>
-        </TabsList>
+      {/* Responsive Grid for all stats */}
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {/* Base Stats */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Base Stats</CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-3 gap-2 text-center">
+            <StatBox label="Health" value={character.baseStats.health} />
+            <StatBox label="Defense" value={character.baseStats.defense} />
+            <StatBox label="Movement" value={character.baseStats.movement} />
+          </CardContent>
+        </Card>
 
-        <TabsContent value="stats">
-          <Card>
-            <CardHeader>
-              <CardTitle>Base Stats</CardTitle>
-            </CardHeader>
-            <CardContent className="grid grid-cols-3 gap-4 text-center">
-              <DiceDisplay mode="conviction" dice={["purple", "purple"]} />
-              <DiceDisplay mode="casting" dice={["purple"]} />
-              <StatBox label="Health" value={character.baseStats.health} />
-              <StatBox label="Defense" value={character.baseStats.defense} />
-              <StatBox label="Movement" value={character.baseStats.movement} />
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="skills">
-          <Card>
-            <CardHeader>
-              <CardTitle>Skill Stats</CardTitle>
-            </CardHeader>
-            <CardContent className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
-              <StatBox label="Presence" value={character.skillStats.presence} />
-              <StatBox label="Lore" value={character.skillStats.lore} />
-              <StatBox label="Agility" value={character.skillStats.agility} />
-              <StatBox label="Perception" value={character.skillStats.perception} />
-              <StatBox label="Strength" value={character.skillStats.strength} />
-              <StatBox label="Casting" value={character.casting} />
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="info">
-          <Card>
-            <CardHeader>
-              <CardTitle>Details</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <InfoRow label="ID" value={character.id} />
-              <InfoRow label="Card ID" value={character.cardId} />
-              <InfoRow label="Set" value={character.set} />
-              <InfoRow label="Version" value={character.version} />
-              <InfoRow label="Adventurer" value={character.adventurer} />
-              <InfoRow label="SP" value={character.sp} />
-
-              <div>
-                <span className="font-medium">Conviction:</span>
-                <div className="flex gap-2 flex-wrap mt-1">
-                  {character.conviction.map((c, i) => (
-                    <Badge key={`${c}-${i}`} variant="secondary">
-                      {c}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <InfoRow label="Locked" value={character.locked ? "Yes" : "No"} />
-              {character.secretDeckCode && (
-                <InfoRow label="Secret Deck Code" value={character.secretDeckCode} />
+        {/* Dice Stats */}
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Dice</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col sm:flex-row gap-4 items-center justify-evenly">
+            <div className="text-center flex flex-col items-center min-w-0">
+              <p className="text-sm font-medium mb-2">Conviction</p>
+              <DiceDisplay mode="conviction" dice={["purple", "blue"]} />
+            </div>
+            <div className="text-center flex flex-col items-center min-w-0">
+              <p className="text-sm font-medium mb-2">Casting</p>
+              {character.casting ? (
+                <DiceDisplay mode="casting" dice={["purple"]} />
+              ) : (
+                <p className="text-xs text-muted-foreground">None</p>
               )}
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Skill Stats */}
+        <Card className="lg:col-span-3">
+          <CardHeader>
+            <CardTitle>Skill Stats</CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-2 md:grid-cols-5 gap-2 text-center">
+            <StatBox label="Presence" value={character.skillStats.presence} />
+            <StatBox label="Lore" value={character.skillStats.lore} />
+            <StatBox label="Agility" value={character.skillStats.agility} />
+            <StatBox label="Perception" value={character.skillStats.perception} />
+            <StatBox label="Strength" value={character.skillStats.strength} />
+          </CardContent>
+        </Card>
+
+        {/* Info */}
+        <Card className="lg:col-span-3">
+          <CardHeader>
+            <CardTitle>Details</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <InfoRow label="ID" value={character.id} />
+            <InfoRow label="Card ID" value={character.cardId} />
+            <InfoRow label="Set" value={character.set} />
+            <InfoRow label="Version" value={character.version} />
+            <InfoRow label="Adventurer" value={character.adventurer} />
+            <InfoRow label="SP" value={character.sp} />
+            <InfoRow label="Locked" value={character.locked ? "Yes" : "No"} />
+            {character.secretDeckCode && (
+              <InfoRow label="Secret Deck Code" value={character.secretDeckCode} />
+            )}
+          </CardContent>
+        </Card>
+      </div>
     </div>
-  )
+  );
 }
 
 function StatBox({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-lg border p-4 bg-muted/20">
-      <p className="text-lg font-bold">{value}</p>
-      <p className="text-sm text-muted-foreground">{label}</p>
+    <div className="rounded-lg border p-3 bg-muted/20 flex flex-col items-center justify-center min-w-0">
+      <p className="text-base font-bold">{value}</p>
+      <p className="text-xs text-muted-foreground break-words">{label}</p>
     </div>
-  )
+  );
 }
 
 function InfoRow({ label, value }: { label: string; value: string | number }) {
@@ -146,5 +137,5 @@ function InfoRow({ label, value }: { label: string; value: string | number }) {
       <span className="font-medium">{label}</span>
       <span className="text-muted-foreground">{value}</span>
     </div>
-  )
+  );
 }
