@@ -3,7 +3,7 @@ import { TagCard } from "@/components/rule/TagCard"
 import { useEffect } from "react"
 
 export function TagGrid() {
-  const { tags, loading, loadTags, error } = useRuleStore()
+  const { tags, loading, loadTags, error, filteredTags } = useRuleStore()
 
       useEffect(() => {
           loadTags()
@@ -22,8 +22,8 @@ export function TagGrid() {
   }
 
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4">
-      {tags.map((tag) => (
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4 h-full">
+      {filteredTags().map((tag) => (
         <TagCard key={tag.tagId} tag={tag} />
       ))}
     </div>

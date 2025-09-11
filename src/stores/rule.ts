@@ -21,18 +21,18 @@ export const useRuleStore = create<RuleState>((set, get) => ({
 
     setTagFilter: (filter) => set({ filter}),
 
-  loadTags: async () => {
-    set({ loading: true, error: null })
-    try {
-      // Simulated async load (can be replaced with fetch)
-      const data: Tag[] = tags
-      set({ tags: data })
-    } catch (err) {
-      set({ error: `Failed to fetch tags: ${err}` })
-    } finally {
-      set({ loading: false })
-    }
-  },
+    loadTags: async () => {
+        set({ loading: true, error: null })
+        try {
+        // Simulated async load (can be replaced with fetch)
+        const data: Tag[] = tags
+        set({ tags: data })
+        } catch (err) {
+        set({ error: `Failed to fetch tags: ${err}` })
+        } finally {
+        set({ loading: false })
+        }
+    },
 
     filteredTags: () => {
         const { filter, tags } = get()
