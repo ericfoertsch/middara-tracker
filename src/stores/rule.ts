@@ -1,32 +1,42 @@
-import type { Rule } from "@/types/rule";
+import type { Tag } from "@/types/rule";
 import { create } from "zustand";
+import tags from "@/assets/data/Tags.json";
 
 type RuleState = {
-    rules: Rule[]
+    tags: Tag[]
     loading: boolean
     error: string | null
     filter: string
 
-    setFilter: (filter: string) => void
-    loadRules: () => Promise<void>
-    filteredRules: () => Rule[]
+    setTagFilter: (filter: string) => void
+    loadTags: () => Promise<void>
+    filteredTags: () => Tag[]
 }
 
 export const useRuleStore = create<RuleState>((set, get) => ({
-    rules: [],
+    tags: [],
     loading: false,
     error: null,
     filter: "",
 
-    setFilter: (filter) => set({ filter}),
+    setTagFilter: (filter) => set({ filter}),
 
-    loadRules: async () => {
-        set({ loading: true, error: null })
-    },
+  loadTags: async () => {
+    set({ loading: true, error: null })
+    try {
+      // Simulated async load (can be replaced with fetch)
+      const data: Tag[] = tags
+      set({ tags: data })
+    } catch (err) {
+      set({ error: `Failed to fetch tags: ${err}` })
+    } finally {
+      set({ loading: false })
+    }
+  },
 
-    filteredRules: () => {
-        const { filter, rules } = get()
-        return rules.filter((c) =>
+    filteredTags: () => {
+        const { filter, tags } = get()
+        return tags.filter((c) =>
             c.name.toLowerCase().includes(filter.toLowerCase())
         )
     }

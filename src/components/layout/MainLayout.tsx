@@ -24,6 +24,7 @@ export function MainLayout({ children }: MainLayoutProps) {
                     <nav className="flex flex-col space-y-1">
                         <SidebarLink href="/dashboard/dashboard2">Dashboard</SidebarLink>
                         <SidebarLink href="/characters">Characters</SidebarLink>
+                        <SidebarLink href="/tags">Tags</SidebarLink>
                         <SidebarLink href="/settings">Settings</SidebarLink>
                     </nav>
                 </aside>

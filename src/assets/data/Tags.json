@@ -1,0 +1,762 @@
+[
+    {
+        "tagId": "T-001",
+        "name": "ALTERNATE, VARIATION, LOOT LEVEL (LVL)",
+        "description": "Combatants with this Tag have special rules on how and when they Spawn.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 79 ],
+        "relatedRules": [ ],
+        "relatedTags": [ "Alternate", "T-012", "Loot LVL" ]
+    },
+    {
+        "tagId": "T-002",
+        "name": "AVARICE (X)",
+        "description": "These Combatants carry more wealth than your average Combatant. When an Adventurer Defeats a Combatant with the AVARICE Tag, they draw extra Combatant Loot Cards. The X represents the amount of extra cards drawn.",
+        "example": "For example, an AVARICE 1 Combatant would give 2 Combatant Loot Cards instead of the normal 1.",
+        "version": "1.2",
+        "rulebookPages": [ 91 ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-003",
+        "name": "BOSS",
+        "description": "Combatants with this tag represent particularly strong opponents, players will fight these Combatants during special Encounters throughout both the Adventure Mode and Crawl Mode. BOSS Combatant Cards are located in Hidden Card decks and will be revealed whenever a Special Encounter Rule instructs players to reveal and use it. Some BOSS Combatants have special Monster Loot that players will Gain when the BOSS is Defeated. If this does occur, a Special Encounter Rule will instruct players on how to Gain this Monster Loot. Unless otherwise stated, Bosses drop Combatant Loot as normal. If you draw the Monster Loot Card, you must redraw.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-004",
+        "name": "CONDUIT",
+        "description": "Combatant Cards with this Tag are used by Adventurers using the Conduit Summoning Discipline. The Adventurer that used Conduit Summoning controls the Combatant Card with this Tag.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-005",
+        "name": "FRAGILE",
+        "description": "When calculating the total * HP of a {:LOYAL ESPER:} with this Tag, half the total HP calculated.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ "T-007" ]
+    },
+    {
+        "tagId": "T-006",
+        "name": "GILDED",
+        "description": "These Combatants always give their Monster Loot instead of a Combatant Loot Card.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-007",
+        "name": "LOYAL ESPER",
+        "description": "Combatants with this Tag can be Spawned by Adventurers through the use of the Summoning Discipline. The Adventurer that Spawned a Combatant with this Tag controls the Combatant they Spawned. These cards use special rules.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 75 ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-008",
+        "name": "OPPOSING ESPER",
+        "description": "Intelligent Combatants with this Tag can be Spawned by enemy summoners or might start on the board during setup. These cards use special rules.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 76 ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-009",
+        "name": "SWARM",
+        "description": "When a SWARM Combatant is Defeated, no Combatant Loot is drawn unless it was the last Combatant of its kind in a Group and its Initiative Card is removed.",
+        "example": "For example, if there is only 1 Cave Sickle left in a Group, and that Cave Sickle is Defeated, the corresponding Cave Sickle Group's Initiative Card is removed, and the Adventurers Gain a Combatant Loot Card.",
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-010",
+        "name": "TRIVIAL",
+        "description": "When a TRIVIAL Combatant is Defeated, no Combatant Loot is drawn.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-011",
+        "name": "TYPE (X)",
+        "description": "A Combatant thematic designation.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 82 ],
+        "relatedRules": [ "Tag Type" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-012",
+        "name": "VARIATION (X)",
+        "description": "A Combatant thematic designation.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 82 ],
+        "relatedRules": [ "Tag Type" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-013",
+        "name": "+(X) ARMOR PIERCING",
+        "description": "The amount of Armor this Weapon ignores during the Subtract Armor step of an Attack.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-014",
+        "name": "+(X) PHYSICAL DMG",
+        "description": "This Tag is used to denote Physical Damage.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 43 ],
+        "relatedRules": [ "Damage Types" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-015",
+        "name": "+(X) IRREDUCIBLE DMG",
+        "description": "This Tag is used to denote Irreducible Damage.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 43 ],
+        "relatedRules": [ "Damage Types" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-016",
+        "name": "+(X) MAGIC DMG",
+        "description": "This Tag is used to denote Magic Damage.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 43 ],
+        "relatedRules": [ "Damage Types" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-017",
+        "name": "+(X) TO THE ATK ROLL",
+        "description": "This tag is used anytime an Ability or Value modifies an Attack roll during the Roll to Hit step of an Attack.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-018",
+        "name": "ARCANE",
+        "description": "When making an Attack against a figure with Arcane, rolled during the Attack roll are considered non-existent.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-019",
+        "name": "ASSEMBLAGE",
+        "description": "A Discipline Tree.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 32 ],
+        "relatedRules": [ "Discipline Trees" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-020",
+        "name": "ATK",
+        "description": "Make an Attack Action using the Combat Dice of your equipped Weapon(s) with the Icon. For Combatants, make an Attack Action using the Combatant’s Combat Dice.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-021",
+        "name": "BACKSTAB",
+        "description": "While Flanking, Attackers with this Tag Gain +3 PHYSICAL DMG. This Tag stacks with the bonus from Flanking.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 50 ],
+        "relatedRules": [ "Flanking", "Backstab" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-022",
+        "name": "COLOSSAL",
+        "description": "A figure with this Tag ignores Elevation and other figures when drawing Line of Sight and figures targeting a figure with this Tag ignore Elevation and other figures when drawing Line of Sight.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-023",
+        "name": "COMMAND (X)",
+        "description": "Move the target up to (X) spaces in any orthogonal direction. The target does not provoke a Break Attack from the figure that used this Ability.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 40 ],
+        "relatedRules": [ "Push", "Pull", "Command" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-024",
+        "name": "COUNTER",
+        "description": "A figure with this Ability may make an Attack during the Check if the target Counters step of an Attack made against them.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 41 ],
+        "relatedRules": [ "Attack Action - 6e" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-025",
+        "name": "CRUOR",
+        "description": "A Discipline Tree.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 32 ],
+        "relatedRules": [ "Discipline Trees" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-026",
+        "name": "CRUSH",
+        "description": "While moving or being moved via an Ability, this figure treats all spaces as unoccupied. After moving or being moved via an Ability, DISPLACE all other figures in spaces the figure with Crush occupies. Then, deal any opponents Displaced this way a PURPLE of IRREDUCIBLE DMG.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-027",
+        "name": "DISPLACE",
+        "description": "When instructed to DISPLACE other figures, place any figures that would be occupying spaces beneath a figure's base onto the nearest unoccupied space to the figure that Displaced them. Placing figures in this way does not count as movement, ignores HEAVY and HULKING, and does not provoke Break Attacks. If the space a figure is placed onto is Dangerous Terrain, that figure may immediately Jump to the nearest Non-Dangerous unoccupied space.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-028",
+        "name": "DODGE",
+        "description": "This Tag allows a figure to use the Dodge Ability.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 52 ],
+        "relatedRules": [ "Dodge" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-029",
+        "name": "DOUBLE",
+        "description": "Items with this Tag may be equipped using either side of the card.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 27 ],
+        "relatedRules": [ "Double Tag Items" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-030",
+        "name": "ELUSIVE",
+        "description": "When making voluntary movement (e.g. you weren't Pushed or Pulled, etc) a figure with ELUSIVE will never provoke Break Attacks from opponents who were adjacent to them at the start of a Move Action or the Ability that gave them Free Movement. If the figure with ELUSIVE is Pushed, Pulled, or otherwise moved by an opponent's Ability, they will still provoke Break Attacks from adjacent figures.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-031",
+        "name": "EMPOWER",
+        "description": "During the Empower step of an Attack or SPELL, figures Empower the Attack or SPELL by adding a BLACK die.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 52 ],
+        "relatedRules": [ "Empower" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-032",
+        "name": "FAMILIAR",
+        "description": "A type of card earned via the Familiar Discipline in the ASSEMBLAGE Discipline Tree.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 76 ],
+        "relatedRules": [ "Familiar" ],
+        "relatedTags": [ "T-019" ]
+    },
+    {
+        "tagId": "T-033",
+        "name": "FINESSE : (DIE)",
+        "description": "If the listed Condition is met, Weapons with this Tag will substitute their printed Combat Die (top-left corner) with the Combat Die specified after FINESSE.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-034",
+        "name": "FLIGHT",
+        "description": "A figure with FLIGHT ignores the effects of all Terrain they occupy. While moving, figures with FLIGHT ignore other figures and only provoke Break Attacks from opponents who were adjacent to them at the start of the Move Action or the Ability that gave them FLIGHT. Figures with FLIGHT do not ignore Obstructing Terrain. A figure with FLIGHT may not end their movement in a space occupied by another figure. Figures with FLIGHT may draw Line of Sight and move between any Elevation change without penalty.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-035",
+        "name": "FORCE (X)",
+        "description": "The target of your Ability must succeed a Conviction Check against the printed Force Value of (X) or be affected. Used when making an Attack. The target of your Attack must succeed a Conviction Check against the printed Force Value of (X) or be affected. The Force Value is increased by the difference of the Attack roll minus the opponent's Defense Value.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 53 ],
+        "relatedRules": [ "FORCE (X) + DIFFERENCE HIT", "Spell-Like Abilities" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-036",
+        "name": "FOLLOW UP (FU)",
+        "description": "A figure may use this Ability in the Follow Up step of an Attack they made.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 41 ],
+        "relatedRules": [ "Attack Action" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-037",
+        "name": "GIGAS GRIP",
+        "description": "A figure may equip two two-handed weapons.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 78 ],
+        "relatedRules": [ "Gigas Grip" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-038",
+        "name": "HEAL (X)",
+        "description": "Remove (X) Damage tokens.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-039",
+        "name": "HEAVY",
+        "description": "A figure with this Tag may reduce movement from Currents, Effects, and Abilities by 1. Meaning that Free Movement granted by your own Disciplines will only be affected by HEAVY if you want them to be. However, Adventurers with HEAVY must incur a -1 to their total Movement Value and take a -1 penalty to their Agility. This Tag is cumulative and can have its effect occur from more than 1 source. This means that an Adventurer with HEAVY on 2 different Items must incur a -2 to their Movement Value.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-040",
+        "name": "HULKING",
+        "description": "Figures with this Tag cannot be moved by opposing Abilities or Currents for any reason.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-041",
+        "name": "IMMUNITY : (TYPE)",
+        "description": "Figures may have Immunities to Effects or Damage Types. If a figure is Immune to an Effect, they may not Gain that Effect. If they have the Effect and then Gain Immunity, they immediately lose the Effect. If a figure is Immune to Damage, When Calculating Final Damage from an Attack or SPELL reduce the Final Damage dealt to 0.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-042",
+        "name": "INCORPOREAL",
+        "description": "When a figure with INCORPOREAL would be dealt PHYSICAL DMG, roll the BLACK . If 4 shields or 4 books are rolled, all PHYSICAL DMG is ignored.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-043",
+        "name": "ITEM UPGRADES",
+        "description": "Item Upgrades are used to augment Weapons, Cores, and Armor, and may be purchased during the Shop and Train Phase. Item Upgrades require Materials before they become available for purchase. These Materials can be found by drawing a Monster Loot Card in the Combatant Loot deck after Defeating opponents.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 28 ],
+        "relatedRules": [ "Item Upgrades" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-044",
+        "name": "LEAP (X)",
+        "description": "A figure using this Ability moves up to X spaces orthogonally in a straight line. A figure using LEAP only provokes Break Attacks from opponents that were adjacent to them at the start of the movement granted by this Ability. Figures using the movement from LEAP will ignore other figures and all Terrain except Obstructing Terrain. A figure using LEAP may move into spaces that contain other figures of their base size or smaller as determined by the amount of spaces their base occupies. If they do, DISPLACE any figures occupying that space. Figures Displaced this way are dealt a PURPLE of IRREDUCIBLE DMG.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-045",
+        "name": "LIGHT",
+        "description": "Some Condition Tags and Disciplines require this Tag to use their Ability.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-046",
+        "name": "LIMIT (X)",
+        "description": "Some Abilities note a Limit (X). This is printed in the Ability Text and is used to succinctly let players know the maximum amount of tokens that can be added as per the Ability's effect.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-047",
+        "name": "LOOT LEVEL (LVL)",
+        "description": "The pool of loot cards to recieve rewards from.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 79 ],
+        "relatedRules": [ "Loot LVL" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-48",
+        "name": "LVL (X) (Discipline Card)",
+        "description": "Every Discipline Card has a LVL associated with it.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 32 ],
+        "relatedRules": [ "Discipline Trees" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-049",
+        "name": "MARTIAL",
+        "description": "A Discipline Tree.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 32 ],
+        "relatedRules": [ "Discipline Trees" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-050",
+        "name": "MATERIAL",
+        "description": "Materials are found by Defeating Combatants and drawing the Monster Loot Card in the Combatant Loot deck. Monster Loot Cards with this Tag are used to unlock Item Upgrades.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 28 ],
+        "relatedRules": [ "Item Upgrades" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-051",
+        "name": "MOVE",
+        "description": "Make a Move Action using the figure's Movement Value.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-052",
+        "name": "NIMBLE",
+        "description": "The first time each turn this figure can Dodge an Attack, they DODGE. During this Dodge, if this figure doesn't roll , add +1 to the result.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-053",
+        "name": "PROTECTION",
+        "description": "When casting a SPELL or using a Spell-Like Ability against a figure with PROTECTION, that figure adds a BLACK to their Conviction Dice when making a Conviction Check. For each rolled on the BLACK this figure adds +1 to their Conviction Check.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-054",
+        "name": "PROVOKE (X)",
+        "description": "Any figure that leaves a space within Range (X) of a figure with PROVOKE, will provoke a Break Attack from that space.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-055",
+        "name": "PULL (X)",
+        "description": "Move the target up to (X) spaces towards the figure that used this Ability. The target does not provoke a Break Attack from the figure that used this Ability.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 40 ],
+        "relatedRules": [ "Push, Pull, and Command" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-056",
+        "name": "PUSH (X)",
+        "description": "Move the target up to (X) spaces away from the figure that used this Ability. The target does not provoke a Break Attack from the figure that used this Ability.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 40 ],
+        "relatedRules": [ "Push, Pull, and Command" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-057",
+        "name": "REACH (X)",
+        "description": "Melee Attacks can be made at Range (X). These Attacks are still considered Melee Attacks.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 50 ],
+        "relatedRules": [ "Flanking and Backstab" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-058",
+        "name": "REDIRECT",
+        "description": "This Tag grants an Ability that changes the intended target of an Attack or Ability.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 70 ],
+        "relatedRules": [ "Redirect" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-059",
+        "name": "RELENTLESS",
+        "description": "You have CRUSH. In addition, when moving or being moved via an Ability, DISPLACE all opponents you moved through. Figures that are Displaced using this Ability are subject to the normal Damage dealt by CRUSH. (a PURPLE of IRREDUCIBLE DMG.) Each figure may only be Displaced once by the Action or Ability that granted this movement.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-060",
+        "name": "RESISTANCE : (TYPE)",
+        "description": "Figures may have Resistances to different Damage types. When Calculating Final Damage from an Attack or SPELL reduce the Final Damage dealt by half (rounded up).",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-061",
+        "name": "SANCTUS",
+        "description": "A Discipline Tree.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 32 ],
+        "relatedRules": [ "Discipline Trees" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-062",
+        "name": "SHIELD",
+        "description": "A type of Weapon that adds to Armor Value. The Range of a SHIELD is equal to the Range of the Weapon equipped in the opposite hand. If 2 Shields are equipped, their Range is considered to be Melee.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-063",
+        "name": "SOI",
+        "description": "Sphere of Influence. The range of spells and effets.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 43 ],
+        "relatedRules": [ "Sphere of Influence." ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-064",
+        "name": "SP",
+        "description": "Stamina Points.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 38 ],
+        "relatedRules": [ "Stamina Points" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-065",
+        "name": "SPELL (X)",
+        "description": "Make a Spell Action with the Force Value of the Spell equaling (X) plus the result of a roll made with the caster’s Casting Upgrade. The effect of the Spell will be listed with this Tag.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 53 ],
+        "relatedRules": [ "Spell Action" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-066",
+        "name": "SQUEEZE",
+        "description": "Figures with SQUEEZE represent figures that are very large but who are also intelligent enough to avoid obstacles with effort and cunning. A figure with SQUEEZE may attempt to move into 1x1 spaces if Obstructing Terrain would otherwise prevent them from fitting. To do so, during a Move Action, a figure with SQUEEZE may spend 1 additional SP to count all movement granted by that Move Action as though their figure only occupied a single space. A figure may only squeeze through spaces in this way if each space counted would prevent them from fitting due to Obstructing Terrain only. A figure with SQUEEZE may not willingly end their Move Action in a space that they cannot fit in. If something would cause them to end their turn in a space they can not fit in, end the current Action and all Abilities. Then, the figure with SQUEEZE is placed on the closest legal space they've moved into this Move Action/Ability and Dealt 6 IRREDUCIBLE DMG. If required, this could move them into the spaces they started this movement.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-067",
+        "name": "SUBTERFUGE",
+        "description": "A Discipline Tree.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 32 ],
+        "relatedRules": [ "Discipline Trees" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-068",
+        "name": "SUMMONER X",
+        "description": "A Tag referenced by Opposing Espers to determine their Force Values.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 76 ],
+        "relatedRules": [ "Opposing Espers" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-069",
+        "name": "SWAP",
+        "description": "The figure using this Ability is removed from the board and the target of this Ability is removed from the board. They are then placed in the space the other occupied. This does not provoke Break Attacks.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-070",
+        "name": "SYMBIOTIC",
+        "description": "A figure with the Symbiotic Tag represents a single figure that uses 2 or more Combatant Cards. These Combatants can be in 1 or more groups on 1 or more unique Combatant Cards. When taking turns, Symbiotic Combatants will use the same figure on the board. Meaning, they draw Line of Sight, target others, and follow all the same rules as if they were considered a single figure. When provoking Break Attacks, all Symbiotic Combatants may make Break Attacks. When making Skill Checks that would affect more than one Symbiotic Combatant (e.g. Jumping), all Symbiotic Combatants must make the Check. When choosing a Symbiotic figure as a target, you must choose 1 of the Symbiotic Combatants that share that figure as the target. If an Action or Ability would target 1 or more adjacent spaces that still contain the Symbiotic figure, they may target another Symbiotic Combatant for each additional space that would affect the Symbiotic figure. If an Ability would target all figures within SOI or Range, then all Symbiotic Combatants would be affected. A Symbiotic Combatant's figure is removed from the Encounter via Defeat only if all associated Symbiotic Combatants that share the figure are also Defeated.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-071",
+        "name": "THROW : (DIE)",
+        "description": "The Throw Ability allows an Adventurer to deal PHYSICAL DMG to an opponent equal to the listed die within Range 4 and Line of Sight. This is NOT an Attack and no Attack roll is made. You simply roll the die and deal the Damage. As such, this Damage cannot be Dodged. Lastly, Armor still reduces Damage dealt this way.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-072",
+        "name": "UNSTOPPABLE",
+        "description": "While moving, this figure treats Obstructing Terrain as normal spaces. Replace any Obstructing Terrain this figure moves into with Hindering Terrain.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-073",
+        "name": "VARIATION",
+        "description": "Alternate versions of characters that can spawn in encounters.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ 79 ],
+        "relatedRules": [ "Alternate, Variations, and Loot LVL" ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-074",
+        "name": "WARP",
+        "description": "The target(s) affected by this Ability are removed from their current location and then placed in a new location as designated by the Ability text. Locations can be a space on the board or any component outside of the board (e.g. Combatant cards, Initiative cards, etc.). WARP does not provoke Break Attacks.",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-075",
+        "name": "WANDERING",
+        "description": "Items with this Tag and Tier cannot be purchased. Instead, they can only be found. When you are drawing Combatant Loot and Pull the Unique Loot card, shuffle this card into the Unique Loot deck as one of the options regardless of the current Loot Level. This Item can be sold as though it were an Item of your current Loot LVL. However, Wandering Items are intended to be limited by the number of copies included in the game as they're thematically Unique. Note: There are no Wandering Items included in this Base Game (Unintentional Malum).",
+        "example": null,
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    },
+    {
+        "tagId": "T-076",
+        "name": "WEAPON TAGS",
+        "description": "Weapons have Tags that thematically categorize them.",
+        "example": "SWORD, WARHAMMER, TOME, etc. Mechanically, these are referenced by other tags such as COMBO or when calculating a RESISTANCE.",
+        "version": "1.2",
+        "rulebookPages": [ ],
+        "relatedRules": [ ],
+        "relatedTags": [ ]
+    }
+]
