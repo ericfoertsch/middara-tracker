@@ -44,7 +44,6 @@ export const useCharacterStore = create<CharacterState>((set, get) => ({
   loadCharacters: async () => {
     set({ loading: true, error: null })
     try {
-      // Simulated async load (can be replaced with fetch)
       const data: Character[] = adventurers
       set({ characters: data })
     } catch (err) {

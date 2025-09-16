@@ -26,6 +26,7 @@ export function MainLayout({ children }: MainLayoutProps) {
                         <SidebarLink href="/characters">Characters</SidebarLink>
                         <SidebarLink href="/tags">Tags</SidebarLink>
                         <SidebarLink href="/settings">Settings</SidebarLink>
+                        <SidebarLink href="/disciplines">Disciplines</SidebarLink>
                     </nav>
                 </aside>
                 <main className="flex-1 p-6 overflow-auto">

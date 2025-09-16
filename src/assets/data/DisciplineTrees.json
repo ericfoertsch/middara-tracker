@@ -1,0 +1,252 @@
+[
+  {
+    "id": "assemblage-tree",
+    "discipline": "Assemblage",
+    "abilities": [
+      [
+        {
+          "id": "a1",
+          "name": "Mana Spark",
+          "description": "Increase mana by 5.",
+          "discipline": "Assemblage",
+          "baseCost": 5,
+          "unlocked": false,
+          "level": 1
+        }
+      ],
+      [
+        {
+          "id": "a2",
+          "name": "Arcane Burst",
+          "description": "Deal 10 arcane damage to a single enemy.",
+          "discipline": "Assemblage",
+          "baseCost": 10,
+          "unlocked": false,
+          "level": 2
+        }
+      ],
+      [
+        {
+          "id": "a3",
+          "name": "Elemental Infusion",
+          "description": "Choose fire, frost, or lightning; your attacks gain that element.",
+          "discipline": "Assemblage",
+          "baseCost": 15,
+          "unlocked": false,
+          "level": 3
+        }
+      ],
+      [
+        {
+          "id": "a4",
+          "name": "Reality Shaper",
+          "description": "Once per turn, reroll a die roll of your choice.",
+          "discipline": "Assemblage",
+          "baseCost": 20,
+          "unlocked": false,
+          "level": 4
+        }
+      ]
+    ]
+  },
+  {
+    "id": "cruor-tree",
+    "discipline": "Cruor",
+    "abilities": [
+      [
+        {
+          "id": "c1",
+          "name": "Blood Tap",
+          "description": "Sacrifice 2 health to gain 2 mana.",
+          "discipline": "Cruor",
+          "baseCost": 5,
+          "unlocked": false,
+          "level": 1
+        }
+      ],
+      [
+        {
+          "id": "c2",
+          "name": "Crimson Strike",
+          "description": "Deal 15 damage and heal for half that amount.",
+          "discipline": "Cruor",
+          "baseCost": 10,
+          "unlocked": false,
+          "level": 2
+        }
+      ],
+      [
+        {
+          "id": "c3",
+          "name": "Sanguine Ward",
+          "description": "Reduce incoming damage by 25% when below half health.",
+          "discipline": "Cruor",
+          "baseCost": 15,
+          "unlocked": false,
+          "level": 3
+        }
+      ],
+      [
+        {
+          "id": "c4",
+          "name": "Bloodlord's Embrace",
+          "description": "When you defeat an enemy, restore full health.",
+          "discipline": "Cruor",
+          "baseCost": 20,
+          "unlocked": false,
+          "level": 4
+        }
+      ]
+    ]
+  },
+  {
+    "id": "martial-tree",
+    "discipline": "Martial",
+    "abilities": [
+      [
+        {
+          "id": "m1",
+          "name": "Quick Strike",
+          "description": "Attack once as a bonus action.",
+          "discipline": "Martial",
+          "baseCost": 5,
+          "unlocked": false,
+          "level": 1
+        }
+      ],
+      [
+        {
+          "id": "m2",
+          "name": "Battle Shout",
+          "description": "Allies within 10ft gain +2 attack until end of turn.",
+          "discipline": "Martial",
+          "baseCost": 10,
+          "unlocked": false,
+          "level": 2
+        }
+      ],
+      [
+        {
+          "id": "m3",
+          "name": "Whirlwind Attack",
+          "description": "Hit all enemies adjacent to you.",
+          "discipline": "Martial",
+          "baseCost": 15,
+          "unlocked": false,
+          "level": 3
+        }
+      ],
+      [
+        {
+          "id": "m4",
+          "name": "Unstoppable",
+          "description": "Once per encounter, ignore all incoming damage for one round.",
+          "discipline": "Martial",
+          "baseCost": 20,
+          "unlocked": false,
+          "level": 4
+        }
+      ]
+    ]
+  },
+  {
+    "id": "sanctus-tree",
+    "discipline": "Sanctus",
+    "abilities": [
+      [
+        {
+          "id": "s1",
+          "name": "Healing Light",
+          "description": "Restore 10 health to an ally.",
+          "discipline": "Sanctus",
+          "baseCost": 5,
+          "unlocked": false,
+          "level": 1
+        }
+      ],
+      [
+        {
+          "id": "s2",
+          "name": "Divine Shield",
+          "description": "Prevent the next 15 damage dealt to you or an ally.",
+          "discipline": "Sanctus",
+          "baseCost": 10,
+          "unlocked": false,
+          "level": 2
+        }
+      ],
+      [
+        {
+          "id": "s3",
+          "name": "Aura of Faith",
+          "description": "Allies within 10ft gain +2 defense.",
+          "discipline": "Sanctus",
+          "baseCost": 15,
+          "unlocked": false,
+          "level": 3
+        }
+      ],
+      [
+        {
+          "id": "s4",
+          "name": "Resurrection",
+          "description": "Revive a fallen ally at half health.",
+          "discipline": "Sanctus",
+          "baseCost": 20,
+          "unlocked": false,
+          "level": 4
+        }
+      ]
+    ]
+  },
+  {
+    "id": "subterfuge-tree",
+    "discipline": "Subterfuge",
+    "abilities": [
+      [
+        {
+          "id": "u1",
+          "name": "Sneak Attack",
+          "description": "Deal double damage when attacking from stealth.",
+          "discipline": "Subterfuge",
+          "baseCost": 5,
+          "unlocked": false,
+          "level": 1
+        }
+      ],
+      [
+        {
+          "id": "u2",
+          "name": "Smoke Bomb",
+          "description": "Create a smoke cloud that obscures vision.",
+          "discipline": "Subterfuge",
+          "baseCost": 10,
+          "unlocked": false,
+          "level": 2
+        }
+      ],
+      [
+        {
+          "id": "u3",
+          "name": "Shadow Step",
+          "description": "Teleport up to 15ft to a space you can see.",
+          "discipline": "Subterfuge",
+          "baseCost": 15,
+          "unlocked": false,
+          "level": 3
+        }
+      ],
+      [
+        {
+          "id": "u4",
+          "name": "Assassin’s Finale",
+          "description": "Once per battle, instantly defeat a weakened enemy (<20% HP).",
+          "discipline": "Subterfuge",
+          "baseCost": 20,
+          "unlocked": false,
+          "level": 4
+        }
+      ]
+    ]
+  }
+]
