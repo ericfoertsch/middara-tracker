@@ -5,248 +5,320 @@
     "abilities": [
       [
         {
-          "id": "a1",
-          "name": "Mana Spark",
-          "description": "Increase mana by 5.",
+          "id": "391-392-873-1.2-UM1",
+          "name": "Banished Knowledge",
+          "description": ":{Exhaust}:\nAn Ally within :{SOI}: Gains :{Haste}:.\nReduce the :{SP}: cost of the Discipline by 1 if the target is an ally other than yourself.",
+          "discipline": "Assemblage",
+          "baseCost": 3,
+          "unlocked": false,
+          "spCost": 2,
+          "stock": 2,
+          "flavorText": "There is safety in not knowing.",
+          "level": 1,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "393-394-873-1.2-UM1",
+          "name": "Last Laugh",
+          "description": ":{Passive}:\nIf you or a :{Loyal Esper}: is Defeated, the figure that dealt the Damage is dealt their 2 :{Conviction Dice}: worth of :{Magic Dmg}:.\n:{Exhaust}:\nWhen you or a :{Loyal Esper}: is dealt Damage by an opponent, you may deal the source of that Damage 2 :{Irreducible Dmg}:.",
+          "discipline": "Assemblage",
+          "baseCost": 3,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 2,
+          "flavorText": null,
+          "level": 1,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "395-396-873-1.2-UM1",
+          "name": "Familiar",
+          "description": ":{Passive}:\nAfter learning this Discipline, choose a :{Familar}: and place it face up next to your Adventurer card.\nYour :{Familar}: cannot be changed.",
+          "discipline": "Assemblage",
+          "baseCost": 3,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 2,
+          "flavorText": null,
+          "level": 1,
+          "relatedCards": ["Tatva", "Tristram", "Yuxa", "Animism"],
+          "version": "1.2"
+        },
+        {
+          "id": "397-398-873-1.2-UM1",
+          "name": "Forebode",
+          "description": ":{Exhaust}:\nAt any time, re-roll a roll you made or that was made against you. Limited by your highest :{Lvl}: :{Assemblage}: Discipline.\n:{Lvl 1}:+: Dodge rolls or Skill Check rolls\n:{Lvl 2}:+: Spell Casting rolls\n:{Lvl 3}:+: Conviction rolls or Attack rolls\n:{Lvl 4}:+: Any rolls",
+          "discipline": "Assemblage",
+          "baseCost": 3,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 2,
+          "flavorText": null,
+          "level": 1,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "399-400-873-1.2-UM1",
+          "name": "Perfect Love",
+          "description": ":{Exhaust}:\nBefore an ally within :{SOI}: would :{Determine Damage}: from an Attack made against them, or :{Resolve the Spell's Effect}: from a Spell made against them, :{Redirect}: to yourself or a :{Loyal Esper}:.",
+          "discipline": "Assemblage",
+          "baseCost": 3,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 2,
+          "flavorText": "There is no fear in love.",
+          "level": 1,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "401-402-873-1.2-UM1",
+          "name": "Euthanasia",
+          "description": "Cast a :{Spell 6}:.\nInflict :{Wilt}: and deal 4 :{Magic Damage}:. Then, if the target was already Inflicted with :{Wilt}:, Inflict :{Condemn}:. If they were already Inflicted with both :{Condemn}: and :{Wilt}:, roll the :{Black Die}:. If :{Skull}: is rolled, the target is defeated.",
+          "discipline": "Assemblage",
+          "baseCost": 3,
+          "unlocked": false,
+          "spCost": 2,
+          "stock": 2,
+          "flavorText": null,
+          "level": 1,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "403-404-873-1.2-UM1",
+          "name": "Sanctuary",
+          "description": ":{Exhaust}:\nAt any time, an ally within :{SOI}: may :{Dodge}:.",
+          "discipline": "Assemblage",
+          "baseCost": 3,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 2,
+          "flavorText": "Here there is safety.",
+          "level": 1,
+          "relatedCards": null,
+          "version": "1.2"
+        }
+      ],
+      [
+        {
+          "id": "405-873-1.2-UM1",
+          "name": "BFF",
+          "description": ":{Exhaust}:\nAt any time, when making an Attack, you or a :{Loyal Esper}: you've Summoned Gains the following:\n:[:{Star}: :{FU}:: :{Move 3}: spaces without provoking Break Attacks, then make a :{Melee/Ranged Attack}: :{Atk}: against a different target.]:",
           "discipline": "Assemblage",
           "baseCost": 5,
           "unlocked": false,
-          "level": 1
-        }
-      ],
-      [
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": null,
+          "level": 2,
+          "relatedCards": null,
+          "version": "1.2"
+        },
         {
-          "id": "a2",
-          "name": "Arcane Burst",
-          "description": "Deal 10 arcane damage to a single enemy.",
+          "id": "406-873-1.2-UM1",
+          "name": "Imposed Paradigm",
+          "description": "Cast a :{Spell 6}:.\n:{Swap}: places with the target.",
           "discipline": "Assemblage",
-          "baseCost": 10,
+          "baseCost": 5,
           "unlocked": false,
-          "level": 2
-        }
-      ],
-      [
+          "spCost": 2,
+          "stock": 1,
+          "flavorText": "A lie told often enough becomes the truth.",
+          "level": 2,
+          "relatedCards": null,
+          "version": "1.2"
+        },
         {
-          "id": "a3",
-          "name": "Elemental Infusion",
-          "description": "Choose fire, frost, or lightning; your attacks gain that element.",
+          "id": "407-873-1.2-UM1",
+          "name": "Possession",
+          "description": ":{Exhaust}:\nA :{Loyal Esper}: within :{SOI}: makes a :{Melee/Ranged Attack}: :{Atk}: or you may spend 1 :{SP}: and another ally within :{SOI}: makes a :{Melee/Ranged Attack}: *ATK* instead.",
           "discipline": "Assemblage",
-          "baseCost": 15,
+          "baseCost": 5,
           "unlocked": false,
-          "level": 3
-        }
-      ],
-      [
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": "Let us end this debate! There is such thing as free will, and I shall take yours as my own.",
+          "level": 2,
+          "relatedCards": null,
+          "version": "1.2"
+        },
         {
-          "id": "a4",
-          "name": "Reality Shaper",
-          "description": "Once per turn, reroll a die roll of your choice.",
+          "id": "408-873-1.2-UM1",
+          "name": "Ruination",
+          "description": "Cast a :{Spell 6}: against up to 2 different opponents within :{SOI}:. Reduce the :{SP}: cost of this discipline by 1 if all targets have an :{Effect}:\nRoll your :{Casting Die}:, deal :{Magic Dmg}: equal to the result.",
           "discipline": "Assemblage",
-          "baseCost": 20,
-          "unlocked": false,
-          "level": 4
-        }
-      ]
-    ]
-  },
-  {
-    "id": "cruor-tree",
-    "discipline": "Cruor",
-    "abilities": [
-      [
-        {
-          "id": "c1",
-          "name": "Blood Tap",
-          "description": "Sacrifice 2 health to gain 2 mana.",
-          "discipline": "Cruor",
           "baseCost": 5,
           "unlocked": false,
-          "level": 1
-        }
-      ],
-      [
+          "spCost": 2,
+          "stock": 1,
+          "flavorText": "Ruin attends the wicked.",
+          "level": 2,
+          "relatedCards": null,
+          "version": "1.2"
+        },
         {
-          "id": "c2",
-          "name": "Crimson Strike",
-          "description": "Deal 15 damage and heal for half that amount.",
-          "discipline": "Cruor",
-          "baseCost": 10,
-          "unlocked": false,
-          "level": 2
-        }
-      ],
-      [
-        {
-          "id": "c3",
-          "name": "Sanguine Ward",
-          "description": "Reduce incoming damage by 25% when below half health.",
-          "discipline": "Cruor",
-          "baseCost": 15,
-          "unlocked": false,
-          "level": 3
-        }
-      ],
-      [
-        {
-          "id": "c4",
-          "name": "Bloodlord's Embrace",
-          "description": "When you defeat an enemy, restore full health.",
-          "discipline": "Cruor",
-          "baseCost": 20,
-          "unlocked": false,
-          "level": 4
-        }
-      ]
-    ]
-  },
-  {
-    "id": "martial-tree",
-    "discipline": "Martial",
-    "abilities": [
-      [
-        {
-          "id": "m1",
-          "name": "Quick Strike",
-          "description": "Attack once as a bonus action.",
-          "discipline": "Martial",
+          "id": "409-873-1.2-UM1",
+          "name": "Fortune Telling",
+          "description": ":{Once Per Encounter}:\nAfter a figure within your :{SOI}: has rolled for any reason, choose the result of any single die except the :{Black Die}:.",
+          "discipline": "Assemblage",
           "baseCost": 5,
           "unlocked": false,
-          "level": 1
-        }
-      ],
-      [
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": "Fortune, good night; smile once more, turn thy wheel.",
+          "level": 2,
+          "relatedCards": null,
+          "version": "1.2"
+        },
         {
-          "id": "m2",
-          "name": "Battle Shout",
-          "description": "Allies within 10ft gain +2 attack until end of turn.",
-          "discipline": "Martial",
-          "baseCost": 10,
-          "unlocked": false,
-          "level": 2
-        }
-      ],
-      [
-        {
-          "id": "m3",
-          "name": "Whirlwind Attack",
-          "description": "Hit all enemies adjacent to you.",
-          "discipline": "Martial",
-          "baseCost": 15,
-          "unlocked": false,
-          "level": 3
-        }
-      ],
-      [
-        {
-          "id": "m4",
-          "name": "Unstoppable",
-          "description": "Once per encounter, ignore all incoming damage for one round.",
-          "discipline": "Martial",
-          "baseCost": 20,
-          "unlocked": false,
-          "level": 4
-        }
-      ]
-    ]
-  },
-  {
-    "id": "sanctus-tree",
-    "discipline": "Sanctus",
-    "abilities": [
-      [
-        {
-          "id": "s1",
-          "name": "Healing Light",
-          "description": "Restore 10 health to an ally.",
-          "discipline": "Sanctus",
+          "id": "410-873-1.2-UM1",
+          "name": "Summoning",
+          "description": ":{Once Per Encounter}:\nSummon a :{Loyal Esper}: within your :{SOI}:. Then gain 1 :{Summon Token}:.\n:{Passive}:\nAt anytime, :{Discard}: a :{Summon Token}: to reduce any non-:{Irreducible Damage}: being dealt to a :{Loyal Esper}: you control by 2.",
+          "discipline": "Assemblage",
           "baseCost": 5,
           "unlocked": false,
-          "level": 1
-        }
-      ],
-      [
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": null,
+          "level": 2,
+          "relatedCards": null,
+          "version": "1.2"
+        },
         {
-          "id": "s2",
-          "name": "Divine Shield",
-          "description": "Prevent the next 15 damage dealt to you or an ally.",
-          "discipline": "Sanctus",
-          "baseCost": 10,
-          "unlocked": false,
-          "level": 2
-        }
-      ],
-      [
-        {
-          "id": "s3",
-          "name": "Aura of Faith",
-          "description": "Allies within 10ft gain +2 defense.",
-          "discipline": "Sanctus",
-          "baseCost": 15,
-          "unlocked": false,
-          "level": 3
-        }
-      ],
-      [
-        {
-          "id": "s4",
-          "name": "Resurrection",
-          "description": "Revive a fallen ally at half health.",
-          "discipline": "Sanctus",
-          "baseCost": 20,
-          "unlocked": false,
-          "level": 4
-        }
-      ]
-    ]
-  },
-  {
-    "id": "subterfuge-tree",
-    "discipline": "Subterfuge",
-    "abilities": [
-      [
-        {
-          "id": "u1",
-          "name": "Sneak Attack",
-          "description": "Deal double damage when attacking from stealth.",
-          "discipline": "Subterfuge",
+          "id": "411-873-1.2-UM1",
+          "name": "Conduit Summoning",
+          "description": ":{Passive}:\n* Any time an opponent is Defeated within :{SOI}:, Earn their :{Conduit}: card.\n* :{1 SP}:: At any time, replace your Adventurer card with a :{Conduit}: that you have Earned. Or, replace your current :{Conduit}: with your Adventurer card.",
+          "discipline": "Assemblage",
           "baseCost": 5,
           "unlocked": false,
-          "level": 1
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": null,
+          "level": 2,
+          "relatedCards": null,
+          "version": "1.2"
         }
       ],
       [
         {
-          "id": "u2",
-          "name": "Smoke Bomb",
-          "description": "Create a smoke cloud that obscures vision.",
-          "discipline": "Subterfuge",
-          "baseCost": 10,
+          "id": "412-873-1.2-UM1",
+          "name": "Exalted Summoning",
+          "description": ":{Once Per Encounter}:\nChoose an :{Exalted Esper}: and use its Ability within :{SOI}:.",
+          "discipline": "Assemblage",
+          "baseCost": 7,
           "unlocked": false,
-          "level": 2
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": null,
+          "level": 3,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "413-873-1.2-UM1",
+          "name": "The Pessimist",
+          "description": ":{Passive}:\nWhen an opponent within :{SOI}: fails a Conviction Check by 3 or more, Inflict :{Condemn}:.",
+          "discipline": "Assemblage",
+          "baseCost": 7,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": "With the choice of two evils, I'll take both.",
+          "level": 3,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "414-873-1.2-UM1",
+          "name": "Helping Hands",
+          "description": ":{Passive}:\nYou may equip an additional :{Consumable}: and :{Relic}:.\n:{Exhaust}:\nMove up to 2 spaces. Gain :{Flight}: during this movement.",
+          "discipline": "Assemblage",
+          "baseCost": 7,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": null,
+          "level": 3,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "415-873-1.2-UM1",
+          "name": "Resonance",
+          "description": ":{Exhaust}:\n:[:{Star}::{FU}:: Use an un-flipped Discipline you have learned that costs :{1-3 SP}:. Any Conditions excluding :{SP}: cost still apply. This Discipline may target a different figure.]:",
+          "discipline": "Assemblage",
+          "baseCost": 7,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": null,
+          "level": 3,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "416-873-1.2-UM1",
+          "name": "Friends With Benefits",
+          "description": ":{Passive}:\n* When you use the Discipline :{Summoning}:, Gain 1 additional :{Summon Token}:.\n* :{Loyal Espers}: you summon gain :{+1 Defense}:.",
+          "discipline": "Assemblage",
+          "baseCost": 7,
+          "unlocked": false,
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": null,
+          "level": 3,
+          "relatedCards": [ "410-873-1.2-UM1" ],
+          "version": "1.2"
         }
       ],
       [
         {
-          "id": "u3",
-          "name": "Shadow Step",
-          "description": "Teleport up to 15ft to a space you can see.",
-          "discipline": "Subterfuge",
-          "baseCost": 15,
+          "id": "417-873-1.2-UM1",
+          "name": "Felled Afterlife",
+          "description": ":{Passive}:\nWhen an opponent within your :{SOI}: is Defeated, this card Gains 1 :{Energy Token}:. (Limit 2). When determining the Force of a Spell, if you have 2 :{Energy Tokens}: on this card, Gain :{+1}: to the Force.\n:{Once Per Encounter}:\nDiscard 2 :{Energy Tokens}: from this card to Gain 2 :{Enslaved Spirits}:.",
+          "discipline": "Assemblage",
+          "baseCost": 9,
           "unlocked": false,
-          "level": 3
-        }
-      ],
-      [
+          "spCost": 0,
+          "stock": 1,
+          "flavorText": null,
+          "level": 4,
+          "relatedCards": null,
+          "version": "1.2"
+        },
         {
-          "id": "u4",
-          "name": "Assassin’s Finale",
-          "description": "Once per battle, instantly defeat a weakened enemy (<20% HP).",
-          "discipline": "Subterfuge",
-          "baseCost": 20,
+          "id": "418-873-1.2-UM1",
+          "name": "The Tower Reversed",
+          "description": ":{Exhaust}:\nCast a :{Spell 6}:.\nDeal :{3 Magic Damage}: for each Effect the target has.\nThen, Inflict :{Darkness}:, :{Disease}:, and :{Paralyze}:.",
+          "discipline": "Assemblage",
+          "baseCost": 9,
           "unlocked": false,
-          "level": 4
+          "spCost": 1,
+          "stock": 1,
+          "flavorText": null,
+          "level": 4,
+          "relatedCards": null,
+          "version": "1.2"
+        },
+        {
+          "id": "419-873-1.2-UM1",
+          "name": "Soul Bond",
+          "description": ":{Passive}:\n* When you use the Discipline :{Summoning}:, Gain 1 additional :{Summon Token}:.\n* Whenever a :{Loyal Esper}: you Summoned spends :{SP}: to make any Action or Ability, they may spend :{SP}: that you have availible instead of their own. If either you or your :{Loyal Espers}: Gain or lose a :{Positive Effect}:, you each also Gain or lose that Effect.",
+          "discipline": "Assemblage",
+          "baseCost": 9,
+          "unlocked": false,
+          "spCost": 1,
+          "stock": 1,
+          "flavorText": null,
+          "level": 4,
+          "relatedCards": null,
+          "version": "1.2"
         }
       ]
     ]
-  }
+  }											
 ]

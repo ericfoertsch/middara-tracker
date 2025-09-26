@@ -1,15 +1,27 @@
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { useDisciplineStore } from "@/stores/discipline"
 import { useEffect } from "react"
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "@/components/ui/tabs"
+import { DisciplineCard } from "@/components/discipline/DisciplineCard"
+import { useDisciplineStore } from "@/stores/discipline"
 
 export default function DisciplineTreePage() {
   const { exp, disciplineTrees, spendExp, loadDisciplineTrees } = useDisciplineStore()
 
-    useEffect(() => {
-        loadDisciplineTrees()
-    }, [loadDisciplineTrees])
+  useEffect(() => {
+    loadDisciplineTrees()
+  }, [loadDisciplineTrees])
+
+  if (!disciplineTrees || disciplineTrees.length === 0) {
+    return (
+      <div className="container mx-auto py-6 text-center text-muted-foreground">
+        No discipline trees available.
+      </div>
+    )
+  }
 
   return (
     <div className="container mx-auto py-6">
@@ -19,8 +31,8 @@ export default function DisciplineTreePage() {
         <p className="font-semibold">EXP Pool: {exp}</p>
       </div>
 
-      <Tabs defaultValue={disciplineTrees[0]?.id || ""} className="w-full">
-        <TabsList>
+      <Tabs defaultValue={disciplineTrees[0].id} className="w-full">
+        <TabsList className="mb-6 flex flex-wrap gap-2">
           {disciplineTrees.map((tree) => (
             <TabsTrigger key={tree.id} value={tree.id}>
               {tree.discipline}
@@ -30,36 +42,21 @@ export default function DisciplineTreePage() {
 
         {disciplineTrees.map((tree) => (
           <TabsContent key={tree.id} value={tree.id}>
-            <div className="grid grid-cols-4 gap-6">
+            <div className="space-y-8">
               {tree.abilities.map((level, idx) => (
-                <div key={idx} className="space-y-4">
-                  <h3 className="text-lg font-semibold">Level {idx + 1}</h3>
-                  {level.map((node) => (
-                    <Card
-                      key={node.id}
-                      className={`h-full ${
-                        node.unlocked ? "border-green-500" : ""
-                      }`}
-                    >
-                      <CardHeader>
-                        <CardTitle className="text-base">{node.name}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground">
-                          {node.description}
-                        </p>
-                        <p className="text-sm mt-2">Cost: {node.baseCost}</p>
-                        <Button
-                          className="mt-2"
-                          size="sm"
-                          disabled={node.unlocked || exp < node.baseCost}
-                          onClick={() => spendExp(tree.id, node.id)}
-                        >
-                          {node.unlocked ? "Unlocked" : "Unlock"}
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
+                <div key={idx}>
+                  <h3 className="text-lg font-semibold mb-4">Level {idx + 1}</h3>
+                  <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    {level.map((node) => (
+                      <DisciplineCard
+                        key={node.id}
+                        node={node}
+                        exp={exp}
+                        spendExp={spendExp} // store function
+                        treeId={tree.id}
+                      />
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
