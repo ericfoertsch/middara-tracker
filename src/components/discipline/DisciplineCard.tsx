@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { CheckCircle2 } from "lucide-react"
 import type { AbilityNode } from "@/types/discipline"
+import { renderWithReplacements } from "@/utils/renderWithReplacements"
 
 interface DisciplineCardProps {
   node: AbilityNode
@@ -45,21 +46,21 @@ export function DisciplineCard({ node, exp, spendExp, treeId }: DisciplineCardPr
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <p className="text-xs text-muted-foreground line-clamp-3 cursor-help">
-                {node.description}
-              </p>
+              <div className="text-xs text-muted-foreground line-clamp-3 cursor-help">
+                {renderWithReplacements(node.description)}
+              </div>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs whitespace-pre-line">
-              {node.description}
+              {renderWithReplacements(node.description)}
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
 
         <div className="mt-auto">
           {node.flavorText && (
-            <p className="italic text-xs text-muted-foreground mt-2">
+            <div className="italic text-xs text-muted-foreground mt-2">
               “{node.flavorText}”
-            </p>
+            </div>
           )}
 
           <TooltipProvider>
