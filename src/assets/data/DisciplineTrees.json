@@ -7,7 +7,7 @@
         {
           "id": "391-392-873-1.2-UM1",
           "name": "Banished Knowledge",
-          "description": ":{Exhaust}:\nAn Ally within :{SOI}: Gains :{Haste}:.\nReduce the :{SP}: cost of the Discipline by 1 if the target is an ally other than yourself.",
+          "description": ":{Exhaust}:\n\nAn Ally within :{SOI}: Gains :{Haste}:.\nReduce the :{SP}: cost of the Discipline by 1 if the target is an ally other than yourself.",
           "discipline": "Assemblage",
           "baseCost": 3,
           "unlocked": false,
