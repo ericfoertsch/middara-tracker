@@ -320,5 +320,27 @@
         }
       ]
     ]
-  }											
+  },
+  {
+    "id": "cruor-tree",
+    "discipline": "Cruor",
+    "abilities":[
+      [
+        {
+          "id": "391-392-873-1.2-UM1",
+          "name": "Banished Knowledge",
+          "description": ":{Exhaust}:\n\nAn Ally within :{SOI}: Gains :{Haste}:.\nReduce the :{SP}: cost of the Discipline by 1 if the target is an ally other than yourself.",
+          "discipline": "Assemblage",
+          "baseCost": 3,
+          "unlocked": false,
+          "spCost": 2,
+          "stock": 2,
+          "flavorText": "There is safety in not knowing.",
+          "level": 1,
+          "relatedCards": null,
+          "version": "1.2"
+        }
+      ]
+    ]
+  }									
 ]

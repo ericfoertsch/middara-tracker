@@ -13,7 +13,7 @@ type DisciplineState = {
 }
 
 export const useDisciplineStore = create<DisciplineState>((set, get) => ({
-  exp: 100,
+  exp: 10,
   disciplineTrees: [],
   loading: false,
   error: null,

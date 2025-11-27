@@ -1,4 +1,3 @@
-// src/components/AbilityCard.tsx
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
@@ -9,7 +8,7 @@ import { renderWithReplacements } from "@/utils/renderWithReplacements"
 interface DisciplineCardProps {
   node: AbilityNode
   exp: number
-  spendExp: (treeId: string, nodeId: string) => void // Correct type
+  spendExp: (treeId: string, nodeId: string) => void
   treeId: string
 }
 
@@ -18,7 +17,7 @@ export function DisciplineCard({ node, exp, spendExp, treeId }: DisciplineCardPr
 
   return (
     <Card
-      className={`relative flex flex-col justify-between h-56 transition
+      className={`relative flex flex-col justify-between h-56 transition overflow-hidden
         ${node.unlocked
           ? "border-green-500 bg-green-50 dark:bg-green-900/20"
           : lockedDueToExp
@@ -33,20 +32,27 @@ export function DisciplineCard({ node, exp, spendExp, treeId }: DisciplineCardPr
         </div>
       )}
 
-      <CardHeader className="pb-2">
-        <CardTitle className="text-sm font-bold">{node.name}</CardTitle>
-        <div className="flex gap-3 text-xs font-semibold mt-1">
+      {/* Header */}
+      <CardHeader className="pb-1">
+        <CardTitle className="text-sm font-bold leading-tight truncate">
+          {node.name}
+        </CardTitle>
+        <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs font-semibold mt-1">
           <span>EXP {node.baseCost}</span>
           <span>SP {node.spCost}</span>
           <span>Stock {node.stock}</span>
         </div>
       </CardHeader>
 
-      <CardContent className="flex-1 flex flex-col">
+      {/* Content */}
+      <CardContent className="flex-1 flex flex-col min-h-0">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <div className="text-xs text-muted-foreground line-clamp-3 cursor-help">
+              <div
+                className="text-xs text-muted-foreground cursor-help overflow-hidden line-clamp-3 hover:overflow-y-auto hover:line-clamp-none"
+                style={{ maxHeight: "4.5rem" }}
+              >
                 {renderWithReplacements(node.description)}
               </div>
             </TooltipTrigger>
@@ -56,9 +62,10 @@ export function DisciplineCard({ node, exp, spendExp, treeId }: DisciplineCardPr
           </Tooltip>
         </TooltipProvider>
 
-        <div className="mt-auto">
+        {/* Footer section pinned to bottom */}
+        <div className="mt-auto pt-2">
           {node.flavorText && (
-            <div className="italic text-xs text-muted-foreground mt-2">
+            <div className="italic text-xs text-muted-foreground mt-1 line-clamp-2">
               “{node.flavorText}”
             </div>
           )}
@@ -71,7 +78,7 @@ export function DisciplineCard({ node, exp, spendExp, treeId }: DisciplineCardPr
                     className="mt-2 w-full"
                     size="sm"
                     disabled={node.unlocked || lockedDueToExp}
-                    onClick={() => spendExp(treeId, node.id)} // ✅ Pass node.id
+                    onClick={() => spendExp(treeId, node.id)}
                   >
                     {node.unlocked
                       ? "Unlocked"

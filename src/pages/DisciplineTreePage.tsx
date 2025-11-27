@@ -52,7 +52,7 @@ export default function DisciplineTreePage() {
                         key={node.id}
                         node={node}
                         exp={exp}
-                        spendExp={spendExp} // store function
+                        spendExp={spendExp}
                         treeId={tree.id}
                       />
                     ))}
