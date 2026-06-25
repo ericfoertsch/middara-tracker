@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useCharacterStore } from "@/stores/character";
 import CharacterCard from "@/components/character/CharacterCard";
@@ -6,18 +5,8 @@ import CharacterGridFilter from "@/components/character/CharacterGridFilter";
 import type { Character } from "@/types/character";
 
 export default function CharacterGrid() {
-    const {
-        loading,
-        error,
-        loadCharacters,
-        filteredCharacters
-    } = useCharacterStore()
+    const { error, filteredCharacters } = useCharacterStore()
 
-    useEffect(() => {
-        loadCharacters()
-    }, [loadCharacters])
-
-    if (loading) return <div>Loading...</div>
     if (error) return <div className="text-red-500">{error}</div>
 
     return (

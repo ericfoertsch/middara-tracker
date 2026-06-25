@@ -1,56 +1,31 @@
-import { create } from "zustand";
-import type { Character } from "@/types/character";
-import adventurers from "@/assets/data/Adventurers.json";
+import { create } from "zustand"
+import type { Character } from "@/types/character"
+import adventurers from "@/assets/data/Adventurers.json"
 
 type CharacterState = {
-    characters: Character[]
-    selectedCharacter: Character | null
-    loading: boolean
-    error: string | null
-    filter: string
-
-    setFilter: (filter: string) => void
-    selectCharacter: (name: string | undefined) => Character | null
-    loadCharacters: () => Promise<void>
-    filteredCharacters: () => Character[]
+  characters: Character[]
+  selectedCharacter: Character | null
+  error: string | null
+  filter: string
+  setFilter: (filter: string) => void
+  selectCharacter: (cardId: string | undefined) => Character | null
+  filteredCharacters: () => Character[]
 }
 
 export const useCharacterStore = create<CharacterState>((set, get) => ({
-  characters: [],
+  characters: adventurers as Character[],
   selectedCharacter: null,
-  loading: false,
   error: null,
   filter: "",
 
   setFilter: (filter) => set({ filter }),
 
-  selectCharacter: (cardId: string | undefined): Character | null => {
+  selectCharacter: (cardId) => {
     set({ error: null })
-
-    //const characterName = name?.replace(/-/g, " ") ?? "";
-    const characters = get().characters;
-
-    const character = characters.find((c) => c.cardId === cardId);
-
-    if (!character) {
-      set({ error: "Character not found." });
-      return null;
-    }
-
-    set({ selectedCharacter: character });
-    return character;
-  },
-
-  loadCharacters: async () => {
-    set({ loading: true, error: null })
-    try {
-      const data: Character[] = adventurers
-      set({ characters: data })
-    } catch (err) {
-      set({ error: `Failed to fetch characters: ${err}` })
-    } finally {
-      set({ loading: false })
-    }
+    const character = get().characters.find((c) => c.cardId === cardId) ?? null
+    if (!character) set({ error: "Character not found." })
+    else set({ selectedCharacter: character })
+    return character
   },
 
   filteredCharacters: () => {

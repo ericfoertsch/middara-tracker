@@ -5,6 +5,7 @@ import { useCharacterStore } from "@/stores/character";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { DiceDisplay } from "@/components/dice/DiceDisplay";
+import { ratingToColor } from "@/utils/diceUtils";
 
 export default function CharacterDetailsPage() {
   const { error, characters, selectCharacter } = useCharacterStore();
@@ -73,12 +74,15 @@ export default function CharacterDetailsPage() {
           <CardContent className="flex flex-col sm:flex-row gap-4 items-center justify-evenly">
             <div className="text-center flex flex-col items-center min-w-0">
               <p className="text-sm font-medium mb-2">Conviction</p>
-              <DiceDisplay mode="conviction" dice={["purple", "blue"]} />
+              <DiceDisplay
+                mode="conviction"
+                dice={character.conviction.map(ratingToColor)}
+              />
             </div>
             <div className="text-center flex flex-col items-center min-w-0">
               <p className="text-sm font-medium mb-2">Casting</p>
               {character.casting ? (
-                <DiceDisplay mode="casting" dice={["purple"]} />
+                <DiceDisplay mode="casting" dice={[ratingToColor(character.casting)]} />
               ) : (
                 <p className="text-xs text-muted-foreground">None</p>
               )}

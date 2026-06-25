@@ -1,21 +1,8 @@
 import { useRuleStore } from "@/stores/rule"
 import { TagCard } from "@/components/rule/TagCard"
-import { useEffect } from "react"
 
 export function TagGrid() {
-  const { tags, loading, loadTags, error, filteredTags } = useRuleStore()
-
-      useEffect(() => {
-          loadTags()
-      }, [loadTags])
-
-  if (loading) {
-    return <div className="text-center py-10">Loading tags…</div>
-  }
-
-  if (error) {
-    return <div className="text-center text-red-500 py-10">{error}</div>
-  }
+  const { tags, filteredTags } = useRuleStore()
 
   if (!tags || tags.length === 0) {
     return <div className="text-center py-10 text-muted-foreground">No tags found</div>

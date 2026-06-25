@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import {
   Tabs,
   TabsList,
@@ -9,11 +8,7 @@ import { DisciplineCard } from "@/components/discipline/DisciplineCard"
 import { useDisciplineStore } from "@/stores/discipline"
 
 export default function DisciplineTreePage() {
-  const { exp, disciplineTrees, spendExp, loadDisciplineTrees } = useDisciplineStore()
-
-  useEffect(() => {
-    loadDisciplineTrees()
-  }, [loadDisciplineTrees])
+  const { exp, disciplineTrees, spendExp } = useDisciplineStore()
 
   if (!disciplineTrees || disciplineTrees.length === 0) {
     return (
