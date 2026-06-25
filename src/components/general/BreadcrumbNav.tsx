@@ -1,48 +1,59 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import React from "react";
+} from "@/components/ui/breadcrumb"
+import React from "react"
+
+const SEGMENT_LABELS: Record<string, string> = {
+  characters: "Characters",
+  builds: "Builds",
+  campaigns: "Campaigns",
+  disciplines: "Disciplines",
+  tags: "Tags",
+  settings: "Settings",
+  test: "Build Tester",
+  session: "Session",
+}
+
+function buildSegments(pathname: string) {
+  const parts = pathname.replace(/^\/+|\/+$/g, "").split("/").filter(Boolean)
+  const home = { label: "Home", path: "/" }
+  if (parts.length === 0) return [home]
+
+  const rest = parts.map((part, idx) => ({
+    label: SEGMENT_LABELS[part] ?? part.charAt(0).toUpperCase() + part.slice(1),
+    path: "/" + parts.slice(0, idx + 1).join("/"),
+  }))
+
+  return [home, ...rest]
+}
 
 export function BreadcrumbNav() {
-  const location = useLocation();
-  const breadcrumbSegments = buildBreadcrumbSegments(location.pathname);
+  const location = useLocation()
+  const segments = buildSegments(location.pathname)
 
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {breadcrumbSegments.map((segment, idx) => (
-          <React.Fragment key={segment.path}>
+        {segments.map((seg, idx) => (
+          <React.Fragment key={seg.path}>
             <BreadcrumbItem>
-              {idx < breadcrumbSegments.length - 1 ? (
+              {idx < segments.length - 1 ? (
                 <BreadcrumbLink asChild>
-                  <Link to={segment.path}>{segment.label}</Link>
+                  <Link to={seg.path}>{seg.label}</Link>
                 </BreadcrumbLink>
               ) : (
-                <span className="text-header-foreground">{segment.label}</span>
+                <span className="text-header-foreground">{seg.label}</span>
               )}
             </BreadcrumbItem>
-            {idx < breadcrumbSegments.length - 1 && <BreadcrumbSeparator />}
+            {idx < segments.length - 1 && <BreadcrumbSeparator />}
           </React.Fragment>
         ))}
       </BreadcrumbList>
     </Breadcrumb>
-  );
-}
-
-function buildBreadcrumbSegments(pathname: string) {
-  const parts = pathname
-    .replace(/^\/+|\/+$/g, "")
-    .split("/")
-    .filter(Boolean);
-
-  return parts.map((part, idx) => {
-    const path = "/" + parts.slice(0, idx + 1).join("/");
-    const label = part.charAt(0).toUpperCase() + part.slice(1);
-    return { label, path };
-  });
+  )
 }
