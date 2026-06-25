@@ -6,6 +6,7 @@ import CharacterDetailsPage from '@/pages/CharacterDetailsPage'
 import TagLookupPage from '@/pages/TagLookupPage'
 import DisciplineTreePage from '@/pages/DisciplineTreePage'
 import BuildsPage from '@/pages/BuildsPage'
+import BuildEditorPage from '@/pages/BuildEditorPage'
 
 export const routes: RouteObject[] = [
   { path: "/", element: <HomePage /> },
@@ -15,4 +16,5 @@ export const routes: RouteObject[] = [
   { path: "/settings", element: <SettingPage /> },
   { path: "/disciplines", element: <DisciplineTreePage /> },
   { path: "/builds", element: <BuildsPage /> },
+  { path: "/builds/:buildId", element: <BuildEditorPage /> },
 ]
