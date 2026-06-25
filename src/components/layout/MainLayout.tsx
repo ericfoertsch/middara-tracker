@@ -22,6 +22,8 @@ export function MainLayout({ children }: MainLayoutProps) {
         <aside className="w-48 bg-muted/40 border-r p-4 space-y-2">
           <nav className="flex flex-col space-y-1">
             <SidebarLink href="/">Home</SidebarLink>
+            <SidebarLink href="/campaigns">Campaigns</SidebarLink>
+            <SidebarLink href="/builds">Builds</SidebarLink>
             <SidebarLink href="/characters">Characters</SidebarLink>
             <SidebarLink href="/disciplines">Disciplines</SidebarLink>
             <SidebarLink href="/tags">Tags</SidebarLink>
