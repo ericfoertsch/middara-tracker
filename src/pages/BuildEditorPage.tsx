@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useBuildStore } from '@/stores/build'
 import { useCharacterStore } from '@/stores/character'
 import { GearSlotGrid } from '@/components/build/GearSlotGrid'
+import { BuildDisciplinePanel } from '@/components/build/BuildDisciplinePanel'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -157,6 +158,23 @@ export default function BuildEditorPage() {
             value={build.notes}
             onChange={(e) => patch({ notes: e.target.value })}
             placeholder="Build notes..."
+          />
+        </CardContent>
+      </Card>
+
+      {/* Disciplines */}
+      <Card>
+        <CardHeader><CardTitle>Disciplines</CardTitle></CardHeader>
+        <CardContent>
+          <BuildDisciplinePanel
+            unlockedNodes={build.unlockedDisciplineNodes}
+            onToggleNode={(nodeId) => {
+              const current = build.unlockedDisciplineNodes
+              const updated = current.includes(nodeId)
+                ? current.filter((id) => id !== nodeId)
+                : [...current, nodeId]
+              patch({ unlockedDisciplineNodes: updated })
+            }}
           />
         </CardContent>
       </Card>
