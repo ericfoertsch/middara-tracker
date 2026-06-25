@@ -5,13 +5,14 @@ import { useCharacterStore } from '@/stores/character'
 import { PositionBar } from '@/components/campaign/PositionBar'
 import { PartyMemberCard } from '@/components/campaign/PartyMemberCard'
 import { SessionLog } from '@/components/campaign/SessionLog'
+import { LootPanel } from '@/components/campaign/LootPanel'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Settings } from 'lucide-react'
 
 export default function SessionPage() {
   const { campaignId } = useParams<{ campaignId: string }>()
-  const { getCampaign, updatePosition, adjustHealth, addNote } = useCampaignStore()
+  const { getCampaign, updatePosition, adjustHealth, addNote, addLoot, equipSingleItem } = useCampaignStore()
   const { characters } = useCharacterStore()
 
   const campaign = getCampaign(campaignId ?? '')
@@ -44,6 +45,22 @@ export default function SessionPage() {
           />
         ))}
       </div>
+
+      {/* Loot */}
+      <Card>
+        <CardHeader className="pb-2"><CardTitle>Party Loot</CardTitle></CardHeader>
+        <CardContent>
+          <LootPanel
+            loot={campaign.loot}
+            party={campaign.party}
+            characters={characters}
+            onAddLoot={(item) => addLoot(campaign.id, item)}
+            onEquipSingle={(memberIndex, slot, item) =>
+              equipSingleItem(campaign.id, memberIndex, slot, item)
+            }
+          />
+        </CardContent>
+      </Card>
 
       {/* Log */}
       <Card>
