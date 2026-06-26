@@ -116,6 +116,8 @@ interface GearItem {
 
 Gear item data (full item catalog) is imported later without requiring changes to the type structure or gear slot layout.
 
+**Build vs. PartyMember discipline state:** A `Build` stores discipline selections as a planning template. When a party member is added to a campaign, their live discipline state (`unlockedDisciplineNodes` on `PartyMember`) is the source of truth during play. Loading a build into a campaign member copies the build's nodes as a starting point; after that the campaign member's state is managed independently.
+
 ### Routes
 
 | Route | Page | Purpose |
