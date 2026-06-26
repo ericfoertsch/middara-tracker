@@ -12,6 +12,12 @@ import { Package, Plus } from 'lucide-react'
 const CATEGORIES: GearCategory[] = ['weapon', 'armor', 'core', 'relic', 'accessory', 'consumable']
 const SINGLE_SLOTS = ['hand1', 'hand2', 'armor', 'core'] as const
 
+const CATEGORY_TO_SLOTS: Partial<Record<GearCategory, typeof SINGLE_SLOTS[number][]>> = {
+  weapon: ['hand1', 'hand2'],
+  armor: ['armor'],
+  core: ['core'],
+}
+
 interface LootPanelProps {
   loot: GearItem[]
   party: PartyMember[]
@@ -68,7 +74,7 @@ export function LootPanel({ loot, party, characters, onAddLoot, onEquipSingle }:
               <Badge variant="outline" className="text-xs shrink-0">{item.category}</Badge>
             </div>
             {/* Quick equip to single slots only for now */}
-            {SINGLE_SLOTS.includes(item.category as typeof SINGLE_SLOTS[number]) && party.length > 0 && (
+            {CATEGORY_TO_SLOTS[item.category] && party.length > 0 && (
               <Select
                 onValueChange={(v) => {
                   const [memberIdx, slot] = v.split('|')
@@ -81,7 +87,8 @@ export function LootPanel({ loot, party, characters, onAddLoot, onEquipSingle }:
                 <SelectContent>
                   {party.map((m, i) => {
                     const char = characters.find((c) => c.cardId === m.characterCardId)
-                    return SINGLE_SLOTS.map((slot) => (
+                    const slots = CATEGORY_TO_SLOTS[item.category] ?? []
+                    return slots.map((slot) => (
                       <SelectItem key={`${i}|${slot}`} value={`${i}|${slot}`}>
                         {char?.name ?? m.characterCardId} — {slot}
                       </SelectItem>
