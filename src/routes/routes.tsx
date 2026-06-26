@@ -10,6 +10,7 @@ import BuildEditorPage from '@/pages/BuildEditorPage'
 import CampaignsPage from '@/pages/CampaignsPage'
 import CampaignSetupPage from '@/pages/CampaignSetupPage'
 import SessionPage from '@/pages/SessionPage'
+import BuildTesterPage from '@/pages/BuildTesterPage'
 
 export const routes: RouteObject[] = [
   { path: "/", element: <HomePage /> },
@@ -23,4 +24,5 @@ export const routes: RouteObject[] = [
   { path: "/campaigns", element: <CampaignsPage /> },
   { path: "/campaigns/:campaignId", element: <CampaignSetupPage /> },
   { path: '/campaigns/:campaignId/session', element: <SessionPage /> },
+  { path: '/builds/:buildId/test', element: <BuildTesterPage /> },
 ]
