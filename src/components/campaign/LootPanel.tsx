@@ -24,9 +24,11 @@ interface LootPanelProps {
   characters: Character[]
   onAddLoot: (item: GearItem) => void
   onEquipSingle: (memberIndex: number, slot: typeof SINGLE_SLOTS[number], item: GearItem | null) => void
+  onEquipRelic: (memberIndex: number, relicIndex: number, item: GearItem) => void
+  onEquipAccessory: (memberIndex: number, accessoryIndex: number, item: GearItem) => void
 }
 
-export function LootPanel({ loot, party, characters, onAddLoot, onEquipSingle }: LootPanelProps) {
+export function LootPanel({ loot, party, characters, onAddLoot, onEquipSingle, onEquipRelic, onEquipAccessory }: LootPanelProps) {
   const [newName, setNewName] = useState('')
   const [newCategory, setNewCategory] = useState<GearCategory>('weapon')
 
@@ -73,7 +75,7 @@ export function LootPanel({ loot, party, characters, onAddLoot, onEquipSingle }:
               <span className="text-sm font-medium truncate">{item.name}</span>
               <Badge variant="outline" className="text-xs shrink-0">{item.category}</Badge>
             </div>
-            {/* Quick equip to single slots only for now */}
+            {/* Equip: single slots (weapon/armor/core) */}
             {CATEGORY_TO_SLOTS[item.category] && party.length > 0 && (
               <Select
                 onValueChange={(v) => {
@@ -91,6 +93,52 @@ export function LootPanel({ loot, party, characters, onAddLoot, onEquipSingle }:
                     return slots.map((slot) => (
                       <SelectItem key={`${i}|${slot}`} value={`${i}|${slot}`}>
                         {char?.name ?? m.characterCardId} — {slot}
+                      </SelectItem>
+                    ))
+                  })}
+                </SelectContent>
+              </Select>
+            )}
+            {/* Equip: relic slots */}
+            {item.category === 'relic' && party.length > 0 && (
+              <Select
+                onValueChange={(v) => {
+                  const [memberIdx, relicIdx] = v.split('|')
+                  onEquipRelic(parseInt(memberIdx), parseInt(relicIdx), item)
+                }}
+              >
+                <SelectTrigger className="w-40 h-7 text-xs">
+                  <SelectValue placeholder="Equip relic..." />
+                </SelectTrigger>
+                <SelectContent>
+                  {party.map((m, i) => {
+                    const char = characters.find((c) => c.cardId === m.characterCardId)
+                    return m.gear.relics.map((_, relicIdx) => (
+                      <SelectItem key={`${i}|${relicIdx}`} value={`${i}|${relicIdx}`}>
+                        {char?.name ?? m.characterCardId} — relic {relicIdx + 1}
+                      </SelectItem>
+                    ))
+                  })}
+                </SelectContent>
+              </Select>
+            )}
+            {/* Equip: accessory slots */}
+            {item.category === 'accessory' && party.length > 0 && (
+              <Select
+                onValueChange={(v) => {
+                  const [memberIdx, accIdx] = v.split('|')
+                  onEquipAccessory(parseInt(memberIdx), parseInt(accIdx), item)
+                }}
+              >
+                <SelectTrigger className="w-40 h-7 text-xs">
+                  <SelectValue placeholder="Equip accessory..." />
+                </SelectTrigger>
+                <SelectContent>
+                  {party.map((m, i) => {
+                    const char = characters.find((c) => c.cardId === m.characterCardId)
+                    return m.gear.accessories.map((_, accIdx) => (
+                      <SelectItem key={`${i}|${accIdx}`} value={`${i}|${accIdx}`}>
+                        {char?.name ?? m.characterCardId} — accessory {accIdx + 1}
                       </SelectItem>
                     ))
                   })}

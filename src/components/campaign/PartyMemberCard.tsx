@@ -4,12 +4,14 @@ import type { Character } from '@/types/character'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { cn } from '@/lib/utils'
 
 interface PartyMemberCardProps {
   member: PartyMember
   character: Character | undefined
   onAdjustHealth: (amount: number) => void
+  onStatusChange: (status: 'active' | 'injured' | 'missing') => void
 }
 
 const STATUS_COLORS: Record<PartyMember['status'], string> = {
@@ -18,7 +20,7 @@ const STATUS_COLORS: Record<PartyMember['status'], string> = {
   missing: 'bg-red-500/20 text-red-700 dark:text-red-400',
 }
 
-export function PartyMemberCard({ member, character, onAdjustHealth }: PartyMemberCardProps) {
+export function PartyMemberCard({ member, character, onAdjustHealth, onStatusChange }: PartyMemberCardProps) {
   const healthPct = member.maxHealth > 0 ? member.currentHealth / member.maxHealth : 0
   const barColor = healthPct > 0.5 ? 'bg-green-500' : healthPct > 0.25 ? 'bg-yellow-500' : 'bg-red-500'
 
@@ -29,9 +31,22 @@ export function PartyMemberCard({ member, character, onAdjustHealth }: PartyMemb
           <CardTitle className="text-base truncate">
             {character?.name ?? member.characterCardId}
           </CardTitle>
-          <Badge className={cn('text-xs shrink-0', STATUS_COLORS[member.status])}>
-            {member.status}
-          </Badge>
+          <Select value={member.status} onValueChange={(v) => onStatusChange(v as 'active' | 'injured' | 'missing')}>
+            <SelectTrigger className="w-28 h-6 text-xs px-2 shrink-0">
+              <SelectValue>
+                <Badge className={cn('text-xs', STATUS_COLORS[member.status])}>
+                  {member.status}
+                </Badge>
+              </SelectValue>
+            </SelectTrigger>
+            <SelectContent>
+              {(['active', 'injured', 'missing'] as const).map((s) => (
+                <SelectItem key={s} value={s}>
+                  <Badge className={cn('text-xs', STATUS_COLORS[s])}>{s}</Badge>
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       </CardHeader>
       <CardContent className="px-4 pb-4 space-y-3">

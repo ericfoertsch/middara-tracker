@@ -4,6 +4,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
+  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import React from "react"
@@ -47,7 +48,7 @@ export function BreadcrumbNav() {
                   <Link to={seg.path}>{seg.label}</Link>
                 </BreadcrumbLink>
               ) : (
-                <span className="text-header-foreground">{seg.label}</span>
+                <BreadcrumbPage>{seg.label}</BreadcrumbPage>
               )}
             </BreadcrumbItem>
             {idx < segments.length - 1 && <BreadcrumbSeparator />}

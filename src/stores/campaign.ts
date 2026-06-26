@@ -32,6 +32,7 @@ type CampaignState = {
   equipSingleItem: (campaignId: string, memberIndex: number, slot: 'hand1' | 'hand2' | 'armor' | 'core', item: GearItem | null) => void
   equipRelicItem: (campaignId: string, memberIndex: number, relicIndex: number, item: GearItem | null) => void
   equipAccessoryItem: (campaignId: string, memberIndex: number, accessoryIndex: number, item: GearItem | null) => void
+  updateMemberStatus: (campaignId: string, memberIndex: number, status: 'active' | 'injured' | 'missing') => void
   addPartyMember: (campaignId: string, member: PartyMember) => void
   removePartyMember: (campaignId: string, memberIndex: number) => void
   addNote: (campaignId: string, text: string) => void
@@ -145,6 +146,21 @@ export const useCampaignStore = create<CampaignState>()(
               party: c.party.map((m, i) =>
                 i === memberIndex ? { ...m, gear: { ...m.gear, accessories: newAccessories } } : m
               ),
+              log: [...c.log, entry],
+              updatedAt: new Date().toISOString(),
+            }
+          }),
+        })),
+
+      updateMemberStatus: (campaignId, memberIndex, status) =>
+        set((state) => ({
+          campaigns: updateCampaign(state.campaigns, campaignId, (c) => {
+            const member = c.party[memberIndex]
+            if (!member) return c
+            const entry = autoLog(`${member.characterCardId} status changed to ${status}`)
+            return {
+              ...c,
+              party: c.party.map((m, i) => (i === memberIndex ? { ...m, status } : m)),
               log: [...c.log, entry],
               updatedAt: new Date().toISOString(),
             }

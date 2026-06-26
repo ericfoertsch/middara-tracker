@@ -1,5 +1,5 @@
 // src/pages/BuildEditorPage.tsx
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useBuildStore } from '@/stores/build'
 import { useCharacterStore } from '@/stores/character'
 import { GearSlotGrid } from '@/components/build/GearSlotGrid'
@@ -8,7 +8,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Link } from 'react-router-dom'
 import { Plus, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 

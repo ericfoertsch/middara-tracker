@@ -28,9 +28,11 @@ export default function SettingPage() {
         toast.error('Invalid save file.')
         return
       }
-      save.builds.forEach(addBuild)
-      save.campaigns.forEach(addCampaign)
-      toast.success(`Imported ${save.builds.length} builds and ${save.campaigns.length} campaigns.`)
+      const newBuilds = save.builds.filter((b) => !builds.find((existing) => existing.id === b.id))
+      const newCampaigns = save.campaigns.filter((c) => !campaigns.find((existing) => existing.id === c.id))
+      newBuilds.forEach(addBuild)
+      newCampaigns.forEach(addCampaign)
+      toast.success(`Imported ${newBuilds.length} builds and ${newCampaigns.length} campaigns.`)
     }
     reader.readAsText(file)
     e.target.value = ''

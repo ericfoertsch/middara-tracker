@@ -12,7 +12,7 @@ import { Settings } from 'lucide-react'
 
 export default function SessionPage() {
   const { campaignId } = useParams<{ campaignId: string }>()
-  const { getCampaign, updatePosition, adjustHealth, addNote, addLoot, equipSingleItem } = useCampaignStore()
+  const { getCampaign, updatePosition, adjustHealth, addNote, addLoot, equipSingleItem, equipRelicItem, equipAccessoryItem, updateMemberStatus } = useCampaignStore()
   const { characters } = useCharacterStore()
 
   const campaign = getCampaign(campaignId ?? '')
@@ -42,6 +42,7 @@ export default function SessionPage() {
             member={member}
             character={characters.find((c) => c.cardId === member.characterCardId)}
             onAdjustHealth={(amount) => adjustHealth(campaign.id, i, amount)}
+            onStatusChange={(status) => updateMemberStatus(campaign.id, i, status)}
           />
         ))}
       </div>
@@ -57,6 +58,12 @@ export default function SessionPage() {
             onAddLoot={(item) => addLoot(campaign.id, item)}
             onEquipSingle={(memberIndex, slot, item) =>
               equipSingleItem(campaign.id, memberIndex, slot, item)
+            }
+            onEquipRelic={(memberIndex, relicIndex, item) =>
+              equipRelicItem(campaign.id, memberIndex, relicIndex, item)
+            }
+            onEquipAccessory={(memberIndex, accessoryIndex, item) =>
+              equipAccessoryItem(campaign.id, memberIndex, accessoryIndex, item)
             }
           />
         </CardContent>
